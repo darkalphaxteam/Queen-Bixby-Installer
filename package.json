@@ -1,8 +1,8 @@
 {
-  "name": "Bixby Mowl",
+  "name": "Bixby-Mowl",
   "version": "7.3.6",
   "description": "Bixby Mowl is the Modified Version of WhatsAsena, Made By ZIYAN with Baileys.",
-  "main": "./bixbymowl/bot.js",
+  "main": "./Bixb-Mowl/bot.js",
   "scripts": {
     "start": "supervisor -s bot.js"
   },

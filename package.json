@@ -1,7 +1,7 @@
 {
-  "name": "JulieMwol",
+  "name": "Bixby Mowl",
   "version": "7.3.6",
-  "description": "Julie Mwol is the Modified Version of WhatsAsena, Made By @farhan-dqz with Baileys.",
+  "description": "Bixby Mowl is the Modified Version of WhatsAsena, Made By ZIYAN with Baileys.",
   "main": "./bixbymowl/bot.js",
   "scripts": {
     "start": "supervisor -s bot.js"

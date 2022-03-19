@@ -1,11 +1,11 @@
 {
-    "name": "Miss Helena ",
-    "description": "Miss Helena is the Modified Version of WhatsAsena, Made By Rafi with Baileys.",
+    "name": "Bixby Mowl",
+    "description": "Bixby Mowl is the Modified Version of WhatsAsena, Made By ZIYAN with Baileys.",
     "logo": "https://i.imgur.com/0mqbyOl.jpeg",
     "keywords": ["whatsapp", "userbot", "julie", "WhatsAsena", "mwol", "bot", "ai"],
-    "repository": "https://github.com/Luciferking1/Miss-Helenaa",
-    "website":   "https://github.com/Luciferking1/Miss-Helenaa",
-    "success_url": "https://github.com/Luciferking1/Miss-Helenaa",
+    "repository": "https://github.com/RIPPER-SER/Bixby-Mowl",
+    "website":   "https://github.com/RIPPER-SER/Bixby-Mowl",
+    "success_url": "https://github.com/RIPPER-SER/Bixby-Mowl",
     "stack": "container",
     "env": {
         "MISSHELENA_CODE": {

@@ -5,7 +5,7 @@ https://github.com/RIPPER-SER/Bixby-Mowl
 */
 
 
-const Asena = require('../events');
+const Bixby = require('../events');
 
 const { MessageType, Mimetype } = require('@adiwajshing/baileys');
 
@@ -19,7 +19,7 @@ const axios = require('axios')
 
 const Axios = require('axios')
 
-Asena.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: 'search your song' , dontAddCommandList: true }, async (message, match) => {
+Bixby.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: 'search your song' , dontAddCommandList: true }, async (message, match) => {
 
 		await message.client.sendMessage(message.jid, '*Processing.....*' , MessageType.text, { quoted: message.data });
 

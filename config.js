@@ -1,5 +1,7 @@
-/* Copyright (C) 2020 Yusuf Usta.
-WhatsAsena - Yusuf Usta
+/* Copyright (C) 2022 RIPPER-SER.
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+https://github.com/RIPPER-SER/bixbymowl
 */
 
 const { Sequelize } = require('sequelize');

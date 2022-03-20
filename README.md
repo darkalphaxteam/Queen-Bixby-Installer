@@ -100,21 +100,21 @@ GET QR
 $ apt update
 $ apt install nodejs --fix-missing
 $ pkg install git
-$ git clone https://github.com/ameer-kallumthodi/pikachu
-$ cd pikachu
+$ git clone https://github.com/RIPPER-SER/Bixby-Mowl
+$ cd Bixby-Mowl
 $ chmod +x *
 $ npm install @adiwajshing/baileys
 $ npm install chalk
-$ node qr.js
+$ node Julie.js
 ```
       
 ```js
 SETUP
-$ git clone https://github.com/ameer-kallumthodi/pikachu
-$ cd pikachu
+$ git clone https://github.com/RIPPER-SER/Bixby-Mowl
+$ cd Bixby-Mowl
 $ chmod +x *
 $ npm i
-$ node qr.js
+$ node Julie.js
    // scan the qr using whatsapp web on your phone
 $ node bot.js
 ```
@@ -124,7 +124,7 @@ $ node bot.js
 ```
 Due to Whatsapp bot; Your WhatsApp account may be banned.
 This is an open source project, you are responsible for everything you do. 
-Absolutely, Pikachu executives do not accept responsibility.
+Absolutely, Bixby Mowl executives do not accept responsibility.
 By establishing the Bixby Mowl , you are deemed to have accepted these responsibilities.
 ```
 

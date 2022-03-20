@@ -1,43 +1,1567 @@
-/* Copyright (C) 2022 RIPPER-SER.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-https://github.com/RIPPER-SER/bixbymowl
-*/
+const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
+const Asena = require('../events');
+const Config = require('../config');
 
-const Bixby = require('../events');
-const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
+const Language = require('../language');
+const Lang = Language.getString('admin');
+const mut = Language.getString('mute');
 const fs = require('fs');
-const Config = require('../config')
-const axios = require('axios')
-const request = require('request');
-const os = require('os');
-var clh = { cd: 'L3Jvb3QvQml4Ynkv', pay: '' }    
-var ggg = Buffer.from(clh.cd, 'base64')
-var ddd = ggg.toString('utf-8')
 
-let whb = Config.WORKTYPE == 'public' ? false : true
+async function checkImAdmin(message, user = message.client.user.jid) {
+    var grup = await message.client.groupMetadata(message.jid);
+    var sonuc = grup['participants'].map((member) => {
+        
+        if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
+    });
+    return sonuc.includes(true);
+}
 
-Bixby.addCommand({pattern: 'help', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
-// send a buttons message!
-    var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
-const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-var plk_here = new Date().toLocaleDateString(get_localized_date)
-var afnplk = '```⏱ Time :' + plk_say + '```\n\n ```📅 Date :' + plk_here + '```'
-	const buttons = [
+Asena.addCommand({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
-        {buttonId: 'id1', buttonText: {displayText: '🎗️MENU🎗️ \n\n➢ .vtalk\n.  ```Starts to Eva voice chat.```\n\n➢ .fulleva \n.  ```Activates full functional Eva features. Turn your account into a ai chatbot!```\n```⌨️ Eg:- :``` ```.fulleva on / off```\n\n➢ .xmedia\n.  ```It is a plugin with more than 25 media tools.``` \n\n➢ .ownercmnd\n.  ```set of commands for bot user or sudo``` \n\n➢ .codtts\n.  ```language code to change the voice in .tts & also for .trt translation``` \n\n➢ .adan \n.  ```Finds prayer time.```\n```⌨️ Eg:- :``` ```.prayer <city>```\n\n➢ .rename \n.  ```[object Object]``` \n\n➢ .anime\n.  ```random anime image ``` \n\n➢ .apkmod\n\n➢ .audio command \n. ```send all bgm commands.``` \n\n➢ .fatp\n\n➢ .ttp \n.  ```Converts text to plain painting.``` \n\n➢ .attp \n.  ```Adds rainbow effect to the text as a sticker.``` \n➢ .autobio\n .  ```change Auto bio mode```\n```⌨️ Eg:- :``` ```.autobio on / off```\n\n➢ .bgm \n.  ```turn on and turn off bgm. -bot owner command```\n```⌨️ Eg:- :``` ```.bgm on / off```\n\n➢ .carbon\n.  ```It sends carbon picture``` \n\n➢ .bgm \n.  ```change reply message BGM mode```\n```⌨️ Eg:- :``` ```.bgm one / two```\n\n➢ .mp3\n.  ```Converts video to sound.``` \n\n➢ .photo\n.  ```Converts the sticker to a photo.``` \n\n➢ .mp4\n.  ```Converts animated stickers to video.``` \n\n➢ .dict\n .  ```Use it as a dictionary.Eg: .dict en_US;lead For supporting languages send *.lngcode*``` \n\n➢ .find\n.  ```Finds the Song``` \n\n➢ .git\n.  ```To get github links.``` \n\n➢ .welcome\n.  ```It sets the welcome message. If you leave it blank it shows the welcome message.```\n \n➢ .goodbye\n.  ```Sets the goodbye message. If you leave blank, it shows the goodbye message.``` \n\n➢ .antilink \n.  ```Activates the Antilink tool.```\n```⌨️ Eg:- :``` ```.antilink on / off```\n\n➢ .moretxt\n.  ```more txtit commands``` \n\n➢ .ffire \n.  ```add your text to random freefire logo``` \n\n➢ .emo \n.  ```emogi to png``` \n\n➢ .news \n\n➢ .notes\n.  ```Shows all your existing notes.``` \n\n➢ .save \n.  ```Reply a message and type .save or just use .save <Your note> without replying``` \n\n➢ .deleteNotes\n.```Deletes *all* your saved notes.```\n\n➢ .owner\n.  ```shows the detail of bot owner``` \n\n➢ .jid \n.  ```Giving users JID.``` \n\n➢ .random \n.  ```word image``` \n\n➢ .brdmore \n.  ```add readmore before your text``` \n\n➢ .rdmore \n.  ```add readmore before your text```\n\n ➢ .removebg \n.  ```Removes the background of the photos.``` \n\n➢ .report \n.  ```Sends reports to group admins.``` \n\n➢ .scan \n.  ```Checks whether the entered number is registered on WhatApp.``` \n\n➢ .trt\n.  ```It translates with Google Translate. You must reply any message.```\n```⌨️ Eg:- :``` ```.trt tr it (From Turkish to Italian)```\n\n➢ .detectlang\n.  ```Guess the language of the replied message.```\n\n➢ .currency\n\n➢ .tts \n.  ```It converts text to sound.```\n\n ➢ .song \n.  ```Uploads the song you wrote.``` \n\n➢ .video\n .  ```Downloads video from YouTube.``` \n\n➢ .sing \n.  ```It sings song that you have written```\n\n ➢ .song \n.  ```Uploads the song you wrote for ios users.``` \n\n➢ .wiki \n.  ```Searches query on Wikipedia.``` \n\n➢ .img \n.  ```Searches for related pics on Google.``` \n\n➢ .github \n.  ```Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy``` \n\n➢ .lyric \n.  ```Finds the lyrics of the song.``` \n\n➢ .covid \n.  ```Shows the daily and overall covid table of more than 15 countries.``` \n\n➢ .sweather \n.  ```Gives you the weekly interpretations of space weather observations provided by the Space Weather Research Center (SWRC) for a p.``` \n\n➢ .compliment \n.  ```It sends complimentry sentenses``` \n\n➢ .hmod \n.  ```Finds mod apps from happymod``` \n\n➢ .insult \n.  ```It sends insulted words``` \n\n➢ .movie \n.  ```Shows movie info.``` \n\n➢ .joke \n\n.  ```It sends random jokes``` \n\n➢ .molu\n .  ```Chat with Pinky. Use .molu <message>``` \n\n➢ .owner\n.  ```shows the detail of bot owner``` \n\n➢ .quote \n.  ```It shares famous quotes``` \n\n➢ .ss \n.  ```Takes a screenshot from the page in the given link.``` \n\n➢ .setvar\n.  ```It sends high resolution wallpapers.``` \n\n➢ .show \n.  ```Get info related to tv series and shows``` \n\n➢ .ig \n.  ```Fetches user informations from instagram``` \n\n➢ .animesay \n.  ```It writes the text inside the banner the anime girl is holding``` \n\n➢ .changesay \n.  ```Turns the text into the change my mind poster.``` \n\n➢ .trumpsay\n .  ```Converts the text to Trumps tweet.``` \n\n➢ .bgm \n.  ```turn on and turn off bgm. -bot owner command```\n```⌨️ Eg:- :``` ```.bgm on / off```\n\n➢ .autosticker \n.  ```turn on and turn off bgm. -bot owner command```\n```⌨️ Eg:- :``` ```.sticker on / off```\n\n➢ .sudo \n.  ```changes sudo numbers```\n```⌨️ Eg:- :``` ```.sudo *your number*```\n\n➢ .caption \n.  ```changes all captions```\n```⌨️ Eg:- :``` ```.caption *Made by Miss Helena*```\n\n➢ .handlers \n.  ```changes handlers```\n```⌨️ Eg:- :``` ```.handler ^[.!] ```\n\n➢ .botname \n.  ```change your bot name```\n```⌨️ Eg:- :``` ```.botname *name* ```\n\n➢ .theri  \n.  ```change your theri commands```\n```⌨️ Eg:- :``` ```.theri command,command```\n\n➢ .sticker\n.  ```It converts your replied photo or video to sticker.```\n\n➢ .alive\n.  ```Does bot work?```\n\n➢ .sysd\n.  ```Shows the system properties.``` \n\n➢ .tagadmin\n.  ```Tags group admins.```\n➢ .txtit\n.  ```Shows text to image tools with unlimited access.``` \n\n➢ .theri \n.  ```turn on & off anti-badword To remove members when they use bad words```\n```⌨️ Eg:- :``` ```.theri no / yes```\n\n➢ .a \n.  ```Converts audio to sound recording.``` \n\n➢ .unvoice\n.  ```Converts audio to sound recording.```\n\n➢ .update\n.  ```Checks the update.``` \n\n➢ .update now\n.  ```It makes updates.``` \n\n➢ .wallpaper\n.  ```It sends high resolution wallpapers.``` \n\n➢ .wame \n.  ```Get a link to the user chat.``` \n\n➢ .reset warn\n.  ```it sends good morning message```\n\n➢ .weather \n.  ```Shows the weather.``` \n\n➢ .speedtest\n.  ```Measures Download and Upload speed.``` \n\n➢ .ping\n.  ```Measures your ping.``` \n\n➢ .short\n .  ```Shorten the long link.``` \n\n➢ .calc \n.  ```Performs simple math operations.``` \n\n➢ .whois\n.  ```Displays metadata data of group or person.```\n\n➢ .gdmrng\n\n.  ```it sends good morning message```\n\n➢ .gdni8\n.  ```it sends good night message```\n '}, type: 1},
-        {buttonId: 'id2', buttonText: {displayText: '🎗️XMEDIA🎗️ \n\nXMEDIA COMMANDS ARE.\n\n\n💻Usage: *.mp4enhance*\nℹ️Desc:Enhance video’s quality.\n\n💻Usage: *.interp*\nℹ️Desc:Increases the FPS of the video.\n\n💻Usage: *.mp4slowmo*\nℹ️Desc:Applies true-slowmo to non-slow motion videos.\n\n💻Usage: *.x4mp4*\nℹ️Desc:Reduce video’s quality by 75%.\n\n💻Usage: *.x2mp4*\nℹ️Desc: Reduce video’s quality by 50%.\n\n💻Usage: *.gif*\nℹ️Desc:Converts video to gif.\n\n💻Usage: *.agif*\nℹ️Desc:Converts video to voiced gif.\n\n💻Usage: *.mp4blur*\nℹ️Desc: Blurs the background of the video.\n\n💻Usage: *.mp4stab*\nℹ️Desc: Decreases the vibration of the video.\n\n💻Usage: *.mp4rainbow*\nℹ️Desc: Applies a rainbow effect to video.\n\n💻Usage: *.mp4color*\nℹ️Desc:Makes the colors of the video more vivid and beautiful.\n\n💻Usage: *.mp4art*\nℹ️Desc:Applies a art effect to the video.\n\n💻Usage: *.mp4negative*\nℹ️Desc:Applies a negative color filter to the video.\n\n💻Usage: *.mp4vintage*\nℹ️Desc:Applies a nostalgic effect to video.\n\n💻Usage: *.mp4bw*\nℹ️Desc: Applies a monochrome effect to video.\n\n💻Usage: *.mp4reverse*\nℹ️Desc: Plays the video in reverse.\n\n💻Usage: *.mp4edge*\nℹ️Desc:Applies a edge effect to the video.\n\n💻Usage: *.mp4image*\nℹ️Desc: Converts photo to 5 sec video.\n\n💻Usage: *.spectrum*\nℹ️Desc: Converts the spectrum of sound into video.\n\n💻Usage: *.waves*\nℹ️Desc: Converts the wave range of sound to video.\n\n💻Usage: *.frequency*\nℹ️Desc: Converts the frequency range of sound to video.\n\n💻Usage: *.avec*\nℹ️Desc: Converts the histogram of sound to video.\n\n💻Usage: *.volumeaudio*\nℹ️Desc: Converts the decibel value of the sound into video.\n\n💻Usage: *.cqtaudio*\nℹ️Desc: Converts the CQT value of audio to video.\n\n💻Usage: *.mp3eq*\nℹ️Desc: Adjusts the sound to a crystal clear level.\n\n💻Usage: *.mp3crusher*\nℹ️Desc:Distorts the sound, makes ridiculous.\n\n💻Usage: *.mp3reverse*\nℹ️Desc:Plays the sound in reverse.\n\n💻Usage: *.mp3pitch*\nℹ️Desc:Makes the sound thinner and faster.\n\n💻Usage *.mp3low*\nℹ️Desc:Makes the sound deep and slower.\n\n💻Usage: *.x2mp3*\nℹ️Desc:  Makes the sound twice as fast.\n\n💻Usage: *.mp3volume*\nℹ️Desc: 🇹🇷 Ses seviyesini fazalca arttırır.\n🇬🇧 Increase sound level so much.\n\n💻Usage: *.bwimage*\nℹ️Desc: 🇹🇷 Fotoğrafa monochrome efekti uygular.\n🇬🇧 Applies a monochrome effect to image.\n\n💻Usage: *.vintageimage*\nℹ️Desc: 🇹🇷 Fotoğrafa vintage efekti uygular.\n🇬🇧 Applies a vinatge effect to video.\n\n💻Usage: *.edgeimage*\nℹ️Desc: 🇹🇷 Fotoğrafa edge efekti uygular.\n🇬🇧 Applies a edge effect to the photo.\n\n💻Usage: *.enhanceimage*\nℹ️Desc: 🇹🇷 Fotoğrafı daha net hale getirir.\n🇬🇧 Makes the photo clearer.\n\n💻Usage: *.blurimage*\nℹ️Desc: 🇹🇷 Fotoğrafın arka planını bulanıklaştırır.\n🇬🇧 Blurs the background of the photo.\n\n💻Usage: *.grenimage*\nℹ️Desc: 🇹🇷 Fotoğrafa gren efekti uygular.\n🇬🇧 Applies grain effect to the photo.\n\n💻Usage: *.negativeimage*\nℹ️Desc: 🇹🇷 Fotoğrafa negatif renk filtresi uygular.\n🇬🇧 Applies a negative color filter to the photo.\n\n💻Usage: *.rainbowimage*\nℹ️Desc: 🇹🇷 Fotoğrafa gökkuşağı efekti uygular.\n🇬🇧 Applies rainbow effect to the photo.\n\n💻Usage: *.colorimage*\nℹ️Desc: 🇹🇷 Fotoğrafın renklerini daha canlı ve çekici yapar.\n🇬🇧 It makes the colors of the photo more vivid and attractive.\n\n💻Usage: *.artimage*\nℹ️Desc: 🇹🇷 Fotoğrafa çizim efekti uygular.\n🇬🇧 Applies a art effect to the photo\n\n '}, type: 1},
-        {buttonId: 'id3', buttonText: {displayText: '🎗️GIT🎗️ \n\n```creater Ziyan```\n\n```owner number wa.me/919446072492\n\n```whatsapp group : https://chat.whatsapp.com/DCMXCkQFxkAKIZPKb5MXnI```\n\n```githublink       https://github.com/RIPPER-SER/Bixby-Mowl```\n'  }, type: 1},
+    if (Config.BANMSG == 'default') {
+        if (message.reply_message !== false) {
+            await message.client.sendMessage(message.jid,'@' + message.reply_message.data.participant.split('@')[0] + '```, ' + Lang.BANNED + '```', MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
+            await message.client.groupRemove(message.jid, [message.reply_message.data.participant]);
+        } else if (message.reply_message === false && message.mention !== false) {
+            var etiketler = '';
+            message.mention.map(async (user) => {
+                etiketler += '@' + user.split('@')[0] + ',';
+            });
 
-      ]
-      
-      const buttonMessage = {
-          contentText: ' 𝙷𝚢 𝙱𝚛𝚘....👋🏻\n\n         ☆ *𝙱𝙾𝚃 𝙸𝙽𝙵𝙾* ☆\n\n🎗️ ɴᴀᴍᴇ  : ꪶ͢ɪͥᴛͭsᷤ ͢ᴍͫᴇͤ 𝙼𝙸𝚂𝚂 𝙷𝙴𝙻𝙴𝙽𝙰      \n🎗️ sᴛᴀᴛᴇs : ᴘᴜʙʟɪᴄ\n🎗️ ᴛɪᴍᴇ   : ```' + plk_say + '```\n🎗️ ᴅᴀᴛᴇ : ```' + plk_here + '```\n🎗️ ᴘᴇʀғɪx : [ . ]\n\n         ☆ *𝙲𝚁𝙴𝚃𝙴𝚁𝚂* ☆\n\n🎗️ZIYAN\n\n          ☆ *𝚃𝙷𝙰𝙽𝙺𝚂* ☆\n\n🎗️ ᴄʟɪᴄᴋ ᴍᴇɴᴜ ᴀɴᴅ ᴇɴᴊᴏʏ ᴛʜᴇ ʙᴏᴛ\n',
-          footerText: '©BIXBY',
-          buttons: buttons,
-          headerType: 1
-      }
-      
-      await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage)
+            await message.client.sendMessage(message.jid,etiketler + '```, ' + Lang.BANNED + '```', MessageType.text, {contextInfo: {mentionedJid: message.mention}});
+            await message.client.groupRemove(message.jid, message.mention);
+        } else {
+            return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+        }
+    }
+    else {
+        if (message.reply_message !== false) {
+            await message.client.sendMessage(message.jid,'@' + message.reply_message.data.participant.split('@')[0] + Config.BANMSG, MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
+            await message.client.groupRemove(message.jid, [message.reply_message.data.participant]);
+        } else if (message.reply_message === false && message.mention !== false) {
+            var etiketler = '';
+            message.mention.map(async (user) => {
+                etiketler += '@' + user.split('@')[0] + ',';
+            });
 
+            await message.client.sendMessage(message.jid,etiketler + Config.BANMSG, MessageType.text, {contextInfo: {mentionedJid: message.mention}});
+            await message.client.groupRemove(message.jid, message.mention);
+        } else {
+            return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+        }
+    }
 }));
+
+Asena.addCommand({pattern: 'add(?: |$)(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
+
+    if (Config.ADDMSG == 'default') {
+        if (match[1] !== '') {
+            match[1].split(' ').map(async (user) => {
+                await message.client.groupAdd(message.jid, [user + "@s.whatsapp.net"]);
+                await message.client.sendMessage(message.jid,'```' + user + ' ' + Lang.ADDED +'```', MessageType.text);
+            });
+        } 
+        else if (match[1].includes('+')) {
+            return await message.client.sendMessage(message.jid,Lang.WRONG,MessageType.text);
+        }
+        else {
+            return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+        }
+    }
+    else {
+        if (match[1] !== '') {
+            match[1].split(' ').map(async (user) => {
+                await message.client.groupAdd(message.jid, [user + "@s.whatsapp.net"]);
+                await message.client.sendMessage(message.jid,'```' + user + '``` ' + Config.ADDMSG, MessageType.text);
+            });
+        }
+        else if (match[1].includes('+')) {
+            return await message.client.sendMessage(message.jid,Lang.WRONG,MessageType.text);
+        }
+        else {
+            return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+        }
+    }
+}));
+
+Asena.addCommand({pattern: 'promote ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
+
+    if (Config.PROMOTEMSG == 'default') {
+        if (message.reply_message !== false) {
+            var checkAlready = await checkImAdmin(message, message.reply_message.data.participant);
+            if (checkAlready) {
+                return await message.client.sendMessage(message.jid,Lang.ALREADY_PROMOTED, MessageType.text);
+            }
+
+            await message.client.sendMessage(message.jid,'@' + message.reply_message.data.participant.split('@')[0] + Lang.PROMOTED, MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
+            await message.client.groupMakeAdmin(message.jid, [message.reply_message.data.participant]);
+        } else if (message.reply_message === false && message.mention !== false) {
+            var etiketler = '';
+            message.mention.map(async (user) => {
+                var checkAlready = await checkImAdmin(message, user);
+                if (checkAlready) {
+                    return await message.client.sendMessage(message.jid,Lang.ALREADY_PROMOTED, MessageType.text);
+                }
+
+                etiketler += '@' + user.split('@')[0] + ',';
+            });
+
+            await message.client.sendMessage(message.jid,etiketler + Lang.PROMOTED, MessageType.text, {contextInfo: {mentionedJid: message.mention}});
+            await message.client.groupMakeAdmin(message.jid, message.mention);
+        } else {
+            return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+        }
+    }
+    else {
+        if (message.reply_message !== false) {
+            var checkAlready = await checkImAdmin(message, message.reply_message.data.participant);
+            if (checkAlready) {
+                return await message.client.sendMessage(message.jid,Lang.ALREADY_PROMOTED, MessageType.text);
+            }
+
+            await message.client.sendMessage(message.jid,'@' + message.reply_message.data.participant.split('@')[0] + Config.PROMOTEMSG, MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
+            await message.client.groupMakeAdmin(message.jid, [message.reply_message.data.participant]);
+        } else if (message.reply_message === false && message.mention !== false) {
+            var etiketler = '';
+            message.mention.map(async (user) => {
+                var checkAlready = await checkImAdmin(message, user);
+                if (checkAlready) {
+                    return await message.client.sendMessage(message.jid,Lang.ALREADY_PROMOTED, MessageType.text);
+                }
+
+                etiketler += '@' + user.split('@')[0] + ',';
+            });
+
+            await message.client.sendMessage(message.jid,etiketler + Config.PROMOTEMSG, MessageType.text, {contextInfo: {mentionedJid: message.mention}});
+            await message.client.groupMakeAdmin(message.jid, message.mention);
+        } else {
+            return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+        }
+    }
+}));
+
+Asena.addCommand({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN);
+
+    if (message.reply_message !== false) {
+        var checkAlready = await checkImAdmin(message, message.reply_message.data.participant.split('@')[0]);
+        if (!checkAlready) {
+            return await message.client.sendMessage(message.jid,Lang.ALREADY_NOT_ADMIN, MessageType.text);
+        }
+
+        await message.client.sendMessage(message.jid,'@' + message.reply_message.data.participant.split('@')[0] + Lang.DEMOTED, MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
+        await message.client.groupDemoteAdmin(message.jid, [message.reply_message.data.participant]);
+    } else if (message.reply_message === false && message.mention !== false) {
+        var etiketler = '';
+        message.mention.map(async (user) => {
+            var checkAlready = await checkImAdmin(message, user);
+            if (!checkAlready) {
+                return await message.client.sendMessage(message.jid,Lang.ALREADY_NOT_ADMIN, MessageType.text);
+            }
+            
+            etiketler += '@' + user.split('@')[0] + ',';
+        });
+
+        await message.client.sendMessage(message.jid,etiketler + Lang.DEMOTED, MessageType.text, {contextInfo: {mentionedJid: message.mention}});
+        await message.client.groupDemoteAdmin(message.jid, message.mention);
+    } else {
+        return await message.client.sendMessage(message.jid,Lang.GIVE_ME_USER,MessageType.text);
+    }
+}));
+
+Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
+
+    if (Config.MUTEMSG == 'default') {
+        if (match[1] == '') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Lang.MUTED,MessageType.text);
+        }
+        else if (match[1] == '1m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.B?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 60000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '2m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 120000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '3m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.??MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 180000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '4m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.D?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 240000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '5m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.BE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 300000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '6m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 360000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '7m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.YED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 420000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '8m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 480000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '9m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.DOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 540000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '10m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '11m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONB?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 660000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '12m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ON?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 720000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '13m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ON??MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 780000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '14m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OND?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 840000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '15m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONBE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 900000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '16m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 960000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '17m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONYED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1020000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '18m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONSEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1080000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '19m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ONDOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1140000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '20m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '21m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?B?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1260000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '22m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM??K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1320000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '23m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM???MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1380000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '24m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?D?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1440000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '25m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?BE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1500000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '26m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?ALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1560000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '27m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?YED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1620000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '28m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?SEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1680000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '29m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.Y?RM?DOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1740000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '30m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '31m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZB?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1860000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '32m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZ?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1920000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '33m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZ??MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1980000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '34m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZD?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2040000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '35m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZBE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2100000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '36m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2160000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '37m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZYED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2220000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '38m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZSEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2280000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '39m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.OTUZDOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2340000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '40m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '41m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKB?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2460000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '42m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRK?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2520000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '43m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRK??MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2580000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '44m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKD?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2640000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '45m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKBE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2700000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '46m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2760000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '47m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKYED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2820000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '48m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKSEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2880000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '49m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.KIRKDOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2940000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '50m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3000000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '51m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?B?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3060000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '52m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL??K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3120000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '53m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL???MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3180000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '54m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?D?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3240000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '55m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?BE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3300000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '56m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?ALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3360000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '57m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?YED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3420000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '58m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?SEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3480000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '59m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.ELL?DOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3540000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '1h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATB?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '2h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAAT?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 7200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '3h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAAT??MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 10800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '4h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATD?RTMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 14400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '5h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATBE?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 18000000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '6h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATALTIMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 21600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '7h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATYED?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 25200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '8h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATSEK?ZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 28800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '9h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATDOKUZMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 32400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '10h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATONMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 36000000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '11h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATONB?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 39600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '12h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.SAATON?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 43200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '1d') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.G?NB?RMUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 86400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '2d') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.G?N?K?MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 172800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] == '3d') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,mut.G?N??MUTE,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 259200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+        }
+        else if (match[1] !== '1m' || match[1] !== '2m' || match[1] !== '3m' || match[1] !== '4m' || match[1] !== '5m' || match[1] !== '6m' || match[1] !== '7m' || match[1] !== '8m' || match[1] !== '9m' || match[1] !== '10m' || match[1] !== '11m' || match[1] !== '12m' || match[1] !== '13m' || match[1] !== '14m' || match[1] !== '15m' || match[1] !== '16m' || match[1] !== '17m' || match[1] !== '18m' || match[1] !== '19m' || match[1] !== '20m' || match[1] !== '21m' || match[1] !== '22m' || match[1] !== '23m' || match[1] !== '24m' || match[1] !== '25m' || match[1] !== '26m' || match[1] !== '27m' || match[1] !== '28m' || match[1] !== '29m' || match[1] !== '30m' || match[1] !== '31m' || match[1] !== '32m' || match[1] !== '33m' || match[1] !== '34m' || match[1] !== '35m' || match[1] !== '36m' || match[1] !== '37m' || match[1] !== '38m' || match[1] !== '39m' || match[1] !== '40m' || match[1] !== '41m' || match[1] !== '42m' || match[1] !== '43m' || match[1] !== '44m' || match[1] !== '45m' || match[1] !== '46m' || match[1] !== '47m' || match[1] !== '48m' || match[1] !== '49m' || match[1] !== '50m' || match[1] !== '51m' || match[1] !== '52m' || match[1] !== '53m' || match[1] !== '54m' || match[1] !== '55m' || match[1] !== '56m' || match[1] !== '57m' || match[1] !== '58m' || match[1] !== '59m' || match[1] !== '1h' || match[1] !== '2h' || match[1] !== '3h' || match[1] !== '4h' || match[1] !== '5h' || match[1] !== '6h' || match[1] !== '7h' || match[1] !== '8h' || match[1] !== '9h' || match[1] !== '10h' || match[1] !== '11h' || match[1] !== '12h' || match[1] !== '1d' || match[1] !== '2d' || match[1] !== '3d') {
+            return await message.client.sendMessage(message.jid, mut.T?R, MessageType.text);
+        }
+    }
+    else {
+        if (match[1] == '') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid, Config.MUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '1m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 60000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '2m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 120000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '3m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 180000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '4m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 240000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '5m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 300000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '6m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 360000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '7m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 420000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '8m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 480000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '9m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 540000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '10m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '11m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 660000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '12m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 720000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '13m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 780000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '14m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 840000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '15m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 900000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '16m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 960000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '17m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1020000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '18m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1080000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '19m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1140000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '20m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '21m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1260000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '22m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1320000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '23m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1380000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '24m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1440000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '25m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1500000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '26m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1560000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '27m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1620000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '28m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1680000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '29m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1740000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '30m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '31m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1860000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '32m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1920000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '33m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 1980000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '34m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2040000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '35m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2100000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '36m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2160000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '37m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2220000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '38m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2280000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '39m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2340000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '40m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '41m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2460000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '42m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2520000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '43m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2580000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '44m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2640000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '45m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2700000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '46m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2760000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '47m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2820000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '48m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2880000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '49m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 2940000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '50m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3000000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '51m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3060000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '52m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3120000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '53m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3180000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '54m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3240000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '55m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3300000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '56m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3360000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '57m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3420000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '58m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3480000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '59m') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3540000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '1h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 3600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '2h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 7200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '3h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 10800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '4h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 14400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '5h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 18000000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '6h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 21600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '7h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 25200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '8h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 28800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '9h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 32400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '10h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 36000000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '11h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 39600000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '12h') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 43200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '1d') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 86400000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '2d') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 172800000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] == '3d') {
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
+            await message.client.sendMessage(message.jid,Config.MUTEMSG,MessageType.text);
+
+            await new Promise(r => setTimeout(r, 259200000));
+    
+            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+            await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+        }
+        else if (match[1] !== '1m' || match[1] !== '2m' || match[1] !== '3m' || match[1] !== '4m' || match[1] !== '5m' || match[1] !== '6m' || match[1] !== '7m' || match[1] !== '8m' || match[1] !== '9m' || match[1] !== '10m' || match[1] !== '11m' || match[1] !== '12m' || match[1] !== '13m' || match[1] !== '14m' || match[1] !== '15m' || match[1] !== '16m' || match[1] !== '17m' || match[1] !== '18m' || match[1] !== '19m' || match[1] !== '20m' || match[1] !== '21m' || match[1] !== '22m' || match[1] !== '23m' || match[1] !== '24m' || match[1] !== '25m' || match[1] !== '26m' || match[1] !== '27m' || match[1] !== '28m' || match[1] !== '29m' || match[1] !== '30m' || match[1] !== '31m' || match[1] !== '32m' || match[1] !== '33m' || match[1] !== '34m' || match[1] !== '35m' || match[1] !== '36m' || match[1] !== '37m' || match[1] !== '38m' || match[1] !== '39m' || match[1] !== '40m' || match[1] !== '41m' || match[1] !== '42m' || match[1] !== '43m' || match[1] !== '44m' || match[1] !== '45m' || match[1] !== '46m' || match[1] !== '47m' || match[1] !== '48m' || match[1] !== '49m' || match[1] !== '50m' || match[1] !== '51m' || match[1] !== '52m' || match[1] !== '53m' || match[1] !== '54m' || match[1] !== '55m' || match[1] !== '56m' || match[1] !== '57m' || match[1] !== '58m' || match[1] !== '59m' || match[1] !== '1h' || match[1] !== '2h' || match[1] !== '3h' || match[1] !== '4h' || match[1] !== '5h' || match[1] !== '6h' || match[1] !== '7h' || match[1] !== '8h' || match[1] !== '9h' || match[1] !== '10h' || match[1] !== '11h' || match[1] !== '12h' || match[1] !== '1d' || match[1] !== '2d' || match[1] !== '3d') {
+            return await message.client.sendMessage(message.jid, mut.T?R, MessageType.text);
+        }
+    }
+}));
+
+Asena.addCommand({pattern: 'unmute ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
+
+    if (Config.UNMUTEMSG == 'default') {
+        await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+        await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+    }
+    else {
+        await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
+        await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
+    }
+}));
+
+Asena.addCommand({pattern: 'invite ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN, MessageType.text);
+    var invite = await message.client.groupInviteCode(message.jid);
+    await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
+}));
+
+Asena.addCommand({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,desc: Asena}, (async (message, match) => {
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,'i am not admin',MessageType.text);
+    if (match[1] === '') return await message.client.sendMessage(message.jid,'changing',MessageType.text);
+    await message.client.groupUpdateSubject(message.jid, match[1]);
+    await message.client.sendMessage(message.jid,'group name changed to  ```' + match[1] + '```' ,MessageType.text);
+    }
+));
+
+module.exports = {
+    checkImAdmin: checkImAdmin
+};

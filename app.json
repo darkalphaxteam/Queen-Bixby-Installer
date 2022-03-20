@@ -33,7 +33,7 @@
         "OWNER_NAME": {
             "description": "Fill your name in here. it will show your name in .owner command reply",
             "required": true,
-            "value": "ZIYAN"
+            "value": "ZIYAN💫"
         },
         "AUTO_STICKER": {
             "description": "If you likes bgm you can write 'true'. Otherwise false",
@@ -192,7 +192,7 @@
         "DEPLOYER": {
             "description": "enter your name here",
             "required": false,
-            "value": "Rafi"
+            "value": "ziyan"
         },
         "BOT_NAME": {
             "description": "heading for .list command reply",

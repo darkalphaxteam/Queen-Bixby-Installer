@@ -1,8 +1,8 @@
 /* Copyright (C) 2021 farhan-dqz
-coded for juliemwol
+coded for Bixbymwol
 */
 
-const Julie = require('../events');
+const Bixby = require('../events');
 const config = require('../config');
 const Heroku = require('heroku-client');
 const heroku = new Heroku({
@@ -34,7 +34,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         STICKER_off = 'STICKER option turned off'
         
     }
-    Julie.addCommand({pattern: 'bgm ?(.*)', fromMe: true, desc: l_dsc, usage: '.bgm on / off' }, (async (message, match) => {
+    Bixby.addCommand({pattern: 'bgm ?(.*)', fromMe: true, desc: l_dsc, usage: '.bgm on / off' }, (async (message, match) => {
         if (match[1] == 'off') {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
@@ -52,7 +52,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         }
     }));
 
-    Julie.addCommand({pattern: 'autosticker ?(.*)', fromMe: true, desc: Y_dsc, usage: '.sticker on / off' }, (async (message, match) => {
+    Bixby.addCommand({pattern: 'autosticker ?(.*)', fromMe: true, desc: Y_dsc, usage: '.sticker on / off' }, (async (message, match) => {
         if (match[1] == 'off') {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
@@ -70,7 +70,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         }
     }));
 
-    Julie.addCommand({ pattern: 'sudo ?(.*)', fromMe: true, desc: 'changes sudo numbers', usage: '.sudo *your number*' }, (async (message, match) => {
+    Bixby.addCommand({ pattern: 'sudo ?(.*)', fromMe: true, desc: 'changes sudo numbers', usage: '.sudo *your number*' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('NEED A NUMBER')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
@@ -80,7 +80,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         await message.sendMessage("NEW SUDO UPDATED")
     }));
 
-    Julie.addCommand({ pattern: 'caption ?(.*)', fromMe: true, desc: 'changes all captions', usage: '.caption *Made by JulieMwol*' }, (async (message, match) => {
+    Bixby.addCommand({ pattern: 'caption ?(.*)', fromMe: true, desc: 'changes all captions', usage: '.caption *Made by Bixby Mowl*' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('NEED cA CAPTION')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
@@ -90,7 +90,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         await message.sendMessage("NEW CAPTION UPDATED")
     }));
 
-    Julie.addCommand({ pattern: 'number ?(.*)', fromMe: true, desc: 'change user number', usage: '.number *Made by Amalser*' }, (async (message, match) => {
+    Bixby.addCommand({ pattern: 'number ?(.*)', fromMe: true, desc: 'change user number', usage: '.number *Made by ziyan*' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('NEED A NUMBER 919895xxxx')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
@@ -100,7 +100,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         await message.sendMessage("NEW USER NUMBER UPDATED")
     }));
 
-    Julie.addCommand({ pattern: 'deployer ?(.*)', fromMe: true, desc: 'change user name', usage: '.deployer *Made by Amalser*' }, (async (message, match) => {
+    Bixby.addCommand({ pattern: 'deployer ?(.*)', fromMe: true, desc: 'change user name', usage: '.deployer *Made by Ziyan*' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('NEED A NAME')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
@@ -110,7 +110,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         await message.sendMessage("NEW USERNAME UPDATED")
     }));
 
-    Julie.addCommand({ pattern: 'handlers ?(.*)', fromMe: true, desc: 'changes handlers', usage: '.handler ^[.!] ' }, (async (message, match) => {
+    Bixby.addCommand({ pattern: 'handlers ?(.*)', fromMe: true, desc: 'changes handlers', usage: '.handler ^[.!] ' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('NEED A CAPTION')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
@@ -121,7 +121,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
     }));
 
 
-    Julie.addCommand({ pattern: 'botname ?(.*)', fromMe: true, desc: 'change your bot name', usage: '.botname *name* ' }, (async (message, match) => {
+    Bixby.addCommand({ pattern: 'botname ?(.*)', fromMe: true, desc: 'change your bot name', usage: '.botname *name* ' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('TYPE YOUR NEW BOT NAME')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
@@ -131,7 +131,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         await message.sendMessage("NEW BOT NAME UPDATED")
     }));
 
-Julie.addCommand({ pattern: 'theri  ?(.*)', fromMe: true, desc: 'change your theri commands', usage: '.theri command,command' }, (async (message, match) => {
+Bixby.addCommand({ pattern: 'theri  ?(.*)', fromMe: true, desc: 'change your theri commands', usage: '.theri command,command' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('TYPE YOUR NEW BOT NAME')
         await heroku.patch(baseURI + '/config-vars', {
             body: {

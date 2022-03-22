@@ -1,4 +1,4 @@
-const SewRavi = require('../events');
+const Bixby = require('../events');
 
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 
@@ -18,13 +18,13 @@ const iii = "Only work with emoji\n emojiyil mathrame work aavukayullu😁"
 
 if (Config.WORKTYPE == 'private') {
 
-    SewRavi.addCommand({pattern: 'emo ?(.*)', fromMe: true, desc: des}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'emo ?(.*)', fromMe: true, desc: des}, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(iii);
 
         var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${encodeURIComponent(match[1])}&type=apple`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png, caption: '𝙼𝚊𝚍𝚎 𝙱𝚢 𝙼𝚒𝚜𝚜 𝙷𝚎𝚕𝚎𝚗𝚊'})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made By Bixby Mowl'})
 
     }));
 
@@ -32,23 +32,23 @@ if (Config.WORKTYPE == 'private') {
 
 else if (Config.WORKTYPE == 'public') {
 
-    SewRavi.addCommand({pattern: 'emo ?(.*)', fromMe: false, desc: des}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'emo ?(.*)', fromMe: false, desc: des}, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(iii);
 
         var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${encodeURIComponent(match[1])}&type=apple`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png, caption: '𝙼𝚊𝚍𝚎 𝙱𝚢 𝙼𝚒𝚜𝚜 𝙷𝚎𝚕𝚎𝚗𝚊'})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made By Bixby Mowl'})
 
     }));
 
-    SewRavi.addCommand({pattern: 'png ?(.*)', fromMe: true,dontAddCMDList: true}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'png ?(.*)', fromMe: true,dontAddCMDList: true}, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(iii);
 
         var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${encodeURIComponent(match[1])}&type=apple`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png, caption: '𝙼𝚊𝚍𝚎 𝙱𝚢 𝙼𝚒𝚜𝚜 𝙷𝚎𝚕𝚎𝚗𝚊'})
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made By Bixby Mowl'})
 
     }));
 

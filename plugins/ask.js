@@ -6,10 +6,10 @@ https://github.com/RIPPER-SER/bixbymowl
 
 
 
-const Asena = require('../events');
+const Bixby = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 
-Asena.addCommand({pattern: 'ask', fromMe: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'ask', fromMe: true}, (async (message, match) => {
 
     await message.sendMessage('*S*');
     await message.sendMessage('*Se*');
@@ -41,13 +41,13 @@ Asena.addCommand({pattern: 'ask', fromMe: true}, (async (message, match) => {
 
 }));
 
-Asena.addCommand({pattern: 'infoask', fromMe: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'infoask', fromMe: true}, (async (message, match) => {
 
-    await message.sendMessage("*Codded by Ameen And Rafi*\n*Seni seviyorum demenin güzel bir hali.*\n💻Usage: *.ask*")
+    await message.sendMessage("*Coded By ZIYAN*\n*Seni seviyorum demenin güzel bir hali.*\n💻Usage: *.ask*")
 
 }));
    
-Asena.addCommand({pattern: 'love', fromMe: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'love', fromMe: true}, (async (message, match) => {
 
     await message.sendMessage('*I*');
     await message.sendMessage('*I L*');
@@ -73,8 +73,8 @@ Asena.addCommand({pattern: 'love', fromMe: true}, (async (message, match) => {
 
 }));
 
-Asena.addCommand({pattern: 'infolove', fromMe: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'infolove', fromMe: true}, (async (message, match) => {
 
-    await message.sendMessage("*Codded by Ameen And Rafi*\n*To say best way ı love you.*\n💻Usage: *.love*")
+    await message.sendMessage("*Coded By ZIYAN*\n*To say best way ı love you.*\n💻Usage: *.love*")
 
 }));

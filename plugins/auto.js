@@ -4,14 +4,12 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
-
-
-const Asena = require('../events');
+const Bixby = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
 
-Asena.addCommand({pattern: 'song', fromMe: false,dontAddCommandList: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'song', fromMe: false,dontAddCommandList: true}, (async (message, match) => {
 
     var r_text = new Array ();    
 r_text[0] = "\nEda eda, mandankonappi.. Nee enne kooduthal mandan aakkatheda\n";

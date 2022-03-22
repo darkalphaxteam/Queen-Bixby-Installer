@@ -4,20 +4,20 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/Bixby-Mowl
 */
 
-const Asena = require('../events');
+const Bixby = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
 
 // CMD_HELP
-const adzan = "Finds prayer time."
+const Bixbyprayer = "Finds prayer time."
 const usage = ".prayer <city>"
 
 const butuh = "```give a city name!```"
 const renek = "```Not found the city!```"
 
 
-        Asena.addCommand({pattern: 'adan ?(.*)', desc: adzan, usage: usage, fromMe: false}, async (message, match) => {
+        Bixby.addCommand({pattern: 'adan ?(.*)', desc: Bixbyprayer, usage: usage, fromMe: false}, async (message, match) => {
 
 	    if (match[1] === '') return await message.reply(butuh);
 	    const url = `https://api.pray.zone/v2/times/today.json?city=${match[1]}`;

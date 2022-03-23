@@ -76,6 +76,9 @@ Please read below to fix all errors👇
 <div align="center">
 
   ### Simple Method
+
+  #Deploy To Railway
+@[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/kNzso1?referralCode=RIPPERBOT)
   
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@ziyankp/Bixby-Mowl-QR)
 

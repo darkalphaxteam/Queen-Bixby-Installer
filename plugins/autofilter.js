@@ -5,7 +5,7 @@ https://github.com/RIPPER-SER/bixbymowl
 */
 
 
-const asena = require('../events');
+const Bixby = require('../events');
 
 const {MessageType} = require('@adiwajshing/baileys');
 
@@ -17,7 +17,7 @@ const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-asena.addCommand({pattern: 'rafi', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
+Bixby.addCommand({pattern: 'ziyan', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -31,7 +31,7 @@ asena.addCommand({pattern: 'rafi', fromMe: true, deleteCommand: true, desc: GM,}
 
     }));
 
-asena.addCommand({pattern: 'ameen', fromMe: true, deleteCommand: true, desc: GN,}, (async (message, match) => {
+Bixby.addCommand({pattern: 'midilaj', fromMe: true, deleteCommand: true, desc: GN,}, (async (message, match) => {
 
         var r_text = new Array ();
 
@@ -49,7 +49,7 @@ asena.addCommand({pattern: 'ameen', fromMe: true, deleteCommand: true, desc: GN,
 
     if (Config.WORKTYPE == 'public') {
 
-        asena.addCommand({pattern: 'rafi', fromMe: false, deleteCommand: true, desc: GM,}, (async (message, match) => {
+        Bixby.addCommand({pattern: 'ziyan', fromMe: false, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
             var r_text = new Array ();
 
@@ -63,7 +63,7 @@ asena.addCommand({pattern: 'ameen', fromMe: true, deleteCommand: true, desc: GN,
 
             }));
 
-        asena.addCommand({pattern: 'ameen', fromMe: false, deleteCommand: true, desc: GN,}, (async (message, match) => {
+        Bixby.addCommand({pattern: 'midilaj', fromMe: false, deleteCommand: true, desc: GN,}, (async (message, match) => {
 
                 var r_text = new Array ();
 
@@ -77,7 +77,7 @@ asena.addCommand({pattern: 'ameen', fromMe: true, deleteCommand: true, desc: GN,
 
                 }));    
 
-                asena.addCommand({pattern: 'helena', fromMe: true, deleteCommand: true,dontAddCommandList: true }, (async (message, match) => {
+                Bixby.addCommand({pattern: 'bixby', fromMe: true, deleteCommand: true,dontAddCommandList: true }, (async (message, match) => {
 
                     var r_text = new Array ();
 

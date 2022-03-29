@@ -51,13 +51,13 @@ Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
             var uri = encodeURI(match[1])
         let banned = jid.find( Jid => Jid === message.jid);
         if(banned !== undefined) return
-        if (!!message.mention && message.mention[0] == '919605741366@s.whatsapp.net') {
+        if (!!message.mention && message.mention[0] == '919446072492@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./media/bgm one/rafimention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
         }
         if (!!message.mention && message.mention[0] == Config.MENTION) {
 await message.client.sendMessage(message.jid, fs.readFileSync('media/bgm one/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
         }
-        if (!!message.mention && message.mention[0] == '917994909899@s.whatsapp.net') {
+        if (!!message.mention && message.mention[0] == '919446072492@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./media/bgm one/nnn.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
         }
 const array = ['Hey','ayye','Ooh','ooh','Kk','thug','Thug','trance','Trance','Broken','broken','aara','Aara','Food','food','fud','Fud','Nee','nee','happy','Happy','Sinan','Dud','Photo','photo','fan','Fan','Gd nyt','gd nyt','koi','Koi','vatt','Vatt','ara','Ara','name','Name','pinnalla','Pinnalla','Hai','Reply','reply','thall','Thall','Song','kozhi','Kozhi','I love you','line','Line','mass','Mass','arulle','Arulle','Mirash','mirash','Mirash bgm','Salman','Arshi','Ezra','ezra','nihal','Nihal','sticker','sufaid','Sufaid','jinn','Jinn','Feel','lub','Lub','foxy','Foxy','Music','music','CR7','Alan','Halo','Aysheri','aysheri','kooi','Kooi','Achumon','ith','🔥','bye','para','Para','mentionameen','Khais','mukesh','Mukesh','Hlo','hlo','njan','Njan','muthe','Muthe','Xxxtentacion','alone','Alone','Converting','potta','Potta','menu','welcome','Welcome','vannu','Vannu','Remove','kyat','rip','remix','Remix','Rip','Myr','dj','Dj','pever','Pever','Oo','XXXTENTACION','Love u','hate','Hate','Njan vannu','tto','Audio','audio','veno','xxxtentacion','Veno','nanban','Ayye','Ronaldo','ronaldo','Kundan','katha','hy','vaanam','Vaanam','Vanam','Ivan','ivan','Annan','annan','Thayoli','umbi','Umbi','Noob','Single','noob','single','Nanban','Achu','achu','Ok','Ameen','Shiva','ok','Enth','ameen','enth','nth','Edi','kundi','Kundi','Uff','Dey','Cr7','Poda','Poli','Pm','Plzz','girl','Oi','mp3','nirth','Nirth','good nyt','birthday','HBD','bdy','Birthday','Pattula','Good night','Nth','Mood','Please','Mm','Dance','Ith','thech','caption','Polikk','Aah','Good nyt','Mrng','alive','Di','Bro','avan','converting','Allah','bg','help','Hii','odiko','oho','killadi','oo','Fuck','invite','Hi','love','Bgm','Owner','Group','list','man','Nanba','oii','poda','yo','sad','work','set','remove','thukum','poko','myre,','kundan','xmedia','commands','Boss','vava','Myre','Lalitha','start','sing','Hello','Bye','warn','Baby','who','find','power','myr','vanam','tagall','Re entry','pass','patti','phaa','mone','look','bor','try','owner','luv','feel','romam','potte','no replay','bgm','vijay','poli','Da','Vazha','Helena','helena','kunna','Kunna','Sorry','Sry','sorry','sry','Bot','bot','song','Uyir','uyir','myre','thayoli','Love','Hy','sed','Sed','Sad','Ayn']
@@ -86,13 +86,13 @@ if(pattern.test(message.message)){
         if(Config.BGMFILTER){
         let banned = jid.find( Jid => Jid === message.jid);
         if(banned !== undefined) return
-        if (!!message.mention && message.mention[0] == '919605741366@s.whatsapp.net') {
+        if (!!message.mention && message.mention[0] == '919446072492@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./media/bgm two/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, contextInfo: { forwardingScore: 5, isForwarded: true }, quoted : message.data, ptt: true})
         }
         if (!!message.mention && message.mention[0] == Config.MENTION) {
 await message.client.sendMessage(message.jid, fs.readFileSync('media/bgm two/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
         }
-        if (!!message.mention && message.mention[0] == '917994909899@s.whatsapp.net') {
+        if (!!message.mention && message.mention[0] == '919446072492@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('media/bgm two/.mp3'), MessageType.audio, { mimetype: Mimetype.mpAudio,duration: Config.SAID, contextInfo: { forwardingScore: 5, isForwarded: true }, quoted : message.data, ptt: true})
         }
         var uri = encodeURI(match[1])
@@ -121,10 +121,10 @@ Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
     if(Config.STICKERP){
     let banned = jid.find( Jid => Jid === message.jid);
     if(banned !== undefined) return
-    if (!!message.mention && message.mention[0] == '919605741366@s.whatsapp.net') {
+    if (!!message.mention && message.mention[0] == '919446072492@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./media/sticker/mention.webp'), MessageType.sticker, { mimetype: Mimetype.webp, quoted : message.data, ptt: false})
     }
- if (!!message.mention && message.mention[0] == '917994909899@s.whatsapp.net') {
+ if (!!message.mention && message.mention[0] == '919446072492@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./media/sticker/ameenmention.webp'), MessageType.sticker, { mimetype: Mimetype.webp,quoted : message.data, ptt: false})
      }
        

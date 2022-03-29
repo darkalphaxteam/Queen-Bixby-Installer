@@ -1,4 +1,4 @@
-/* Copyright © RIPPER-SER/*
+/* Copyright © RIPPER-SER*/
 
 const Asena = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');

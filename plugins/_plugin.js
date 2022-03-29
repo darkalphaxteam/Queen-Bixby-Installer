@@ -59,7 +59,7 @@ Asena.addCommand({pattern: 'plugin ?(.*)', fromMe: true, desc: Lang.INSTALL_DESC
         try {
             require('./' + plugin_name);
         } catch (e) {
-            fs.unlinkSync('/root/Bixby/plugins/' + plugin_name + '.js')
+            fs.unlinkSync('./plugins/' + plugin_name + '.js')
             return await message.client.sendMessage(message.jid,Lang.INVALID_PLUGIN + ' ```' + e + '```', MessageType.text);
         }
         var DEG = { level: 5 }

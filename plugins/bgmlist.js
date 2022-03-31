@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
-const Asena = require('../events');
+const Bixby = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const Config = require('../config');
@@ -14,7 +14,7 @@ const config = require('../config');
 const Language = require('../language');
 const Lang = Language.getString('wallpaper');
 
-Asena.addCommand({pattern: 'audio command', fromMe: false, desc: 'send all bgm commands'}, (async (message, match) => {
+Bixby.addCommand({pattern: 'audio command', fromMe: false, desc: 'send all bgm commands'}, (async (message, match) => {
 
     var r_text = new Array ();
     
@@ -28,7 +28,7 @@ Asena.addCommand({pattern: 'audio command', fromMe: false, desc: 'send all bgm c
    ` + config.LOGO_NAME + `
 
 ★✰✯★✰✯★✰✯★✰✯★✰✯★✰✯★
-𝐌𝐈𝐒𝐒 𝐇𝐄𝐋𝐄𝐍𝐀 𝐁𝐆𝐌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒
+BIXBY MOWL 𝐁𝐆𝐌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒
 ★✰✯★✰✯★✰✯★✰✯★✰✯★✰✯★
 
 
@@ -451,7 +451,7 @@ Asena.addCommand({pattern: 'audio command', fromMe: false, desc: 'send all bgm c
 ➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪➪
 
 ➪➪➪➪➪➪➪➪➪➪➪➪➪➪
-𝐁𝐘 𝐌𝐈𝐒𝐒 𝐇𝐄𝐋𝐄𝐍𝐀 
+©BIXBY MOWL
 ➪➪➪➪➪➪➪➪➪➪➪➪➪➪
 `}) 
 

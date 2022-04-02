@@ -83,7 +83,7 @@ Please read below to fix all errors👇
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@ziyankp/Bixby-Mowl-QR)
 
 
-[![Deploy](https://www.linkpicture.com/q/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e737667.svg)](https://heroku.com/deploy?template=https://github.com/RIPPER-SER/Bixby-Mowl)
+[![Deploy](https://www.linkpicture.com/q/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e737667.svg)](https://heroku.com/deploy?template=)
      </div>
 <br>
 <br >
@@ -134,10 +134,10 @@ By establishing the Bixby Mowl , you are deemed to have accepted these responsib
 ## Developers
   <div align="center">
     
-  [![RIPPER-SER](https://github.com/RIPPER-SER.png?size=100)](https://github.com/RIPPER-SER) | [![MIDU-SER](https://github.com/MIDU-SER.png?size=100)](https://github.com/saidalisaid2) | [![Souravkl11](https://github.com/souravkl11.png?size=100)](https://github.com/souravkl11) 
+  [![RIPPER-SER](https://github.com/RIPPER-SER.png?size=100)](https://github.com/RIPPER-SER) | [![MIDU-SER](https://github.com/MIDU-SER.png?size=100)](https://github.com/MIDU-SER) | [![Souravkl11](https://github.com/Alien-alfa.png?size=100)](https://github.com/souravkl11) 
 ----|----|----
-[ZIYAN](https://github.com/RIPPER-SER) | [MIDU-SER](https://github.com/MIDU-SER) | [Souravkl11](https://github.com/souravkl11/Raganork)
-Base, Bug Fixes, Modules | Bug Fixes, Modules | Bug fixes, ideas
+[ZIYAN](https://github.com/RIPPER-SER) | [MIDU-SER](https://github.com/MIDU-SER) | [Alien-Alfa](https://github.com/Alien-alfa)
+Base, Bug Fixes, Modules | Bug Fixes, Modules | Powered by ALIEN-ALFA
   </div>
 
 ## Contributors

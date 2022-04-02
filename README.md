@@ -137,7 +137,7 @@ By establishing the Bixby Mowl , you are deemed to have accepted these responsib
   [![RIPPER-SER](https://github.com/RIPPER-SER.png?size=100)](https://github.com/RIPPER-SER) | [![MIDU-SER](https://github.com/MIDU-SER.png?size=100)](https://github.com/MIDU-SER) | [![Souravkl11](https://github.com/Alien-alfa.png?size=100)](https://github.com/souravkl11) 
 ----|----|----
 [ZIYAN](https://github.com/RIPPER-SER) | [MIDU-SER](https://github.com/MIDU-SER) | [Alien-Alfa](https://github.com/Alien-alfa)
-Base, Bug Fixes, Modules | Bug Fixes, Modules | Powered by ALIEN-ALFA
+Author , Base, Bug Fixes, Modules | Bug Fixes, Modules | Powered by ALIEN-ALFA
   </div>
 
 ## Contributors

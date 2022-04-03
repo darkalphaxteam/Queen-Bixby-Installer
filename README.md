@@ -63,21 +63,10 @@ Click WA logo to Join Support Group 👇
   <a href="https://chat.whatsapp.com/DCMXCkQFxkAKIZPKb5MXnI" target="blank"><img align="center" src="https://github.com/Alien-alfa/PublicBot/blob/main/wlogo.svg.png " /></a>
 </p>
 
-## 
-  <h3 align="center">📢 Warning for error fixing:</h3>
-<p align="center">
-Please read below to fix all errors👇
-    <br>
-<br>
-  (step1=[SCAN](https://replit.com/@ziyankp/Bixby-Mowl-QR)
-    
-## Setup
-<div align="center">
+### Simple Method
 
-  ### Simple Method
-
-  #Deploy To Railway
-@[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/kNzso1?referralCode=RIPPERBOT)
+ 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/kNzso1?referralCode=RIPPERBOT)
   
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@ziyankp/Bixby-Mowl-QR)
 

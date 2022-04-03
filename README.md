@@ -14,7 +14,7 @@
 
 <div align="center">
   
-## [![PIKACHU](https://readme-typing-svg.herokuapp.com?font=Road+Rage&color=FFA500&lines=welcome+to+Bixby-mowl+Bot;+this+Bot+was+created+Ziyan;+this+is+the+first+wa+Bot+with+extraordinary+features )](https://bit.ly/2VM4lxF)
+## [![BIXBY](https://readme-typing-svg.herokuapp.com?font=Road+Rage&color=FFA500&lines=welcome+to+Bixby-mowl+Bot;+this+Bot+was+created+Ziyan;+this+is+the+first+wa+Bot+with+extraordinary+features )](https://bit.ly/2VM4lxF)
 
  </a>
 </p>
@@ -69,8 +69,7 @@ Click WA logo to Join Support Group 👇
 Please read below to fix all errors👇
     <br>
 <br>
-  <a href="https://chat.whatsapp.com/BLdaoLVnX6jFnkKHFjLbH6" target="blank"><img align="center" src="https://i.hizliresim.com/pce1372.png" alt="kyrie.baran" height="200" width="200" /></a>
-</p>
+  (step1=[SCAN](https://replit.com/@ziyankp/Bixby-Mowl-QR)
     
 ## Setup
 <div align="center">

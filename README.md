@@ -70,8 +70,8 @@ Click WA logo to Join Support Group 👇
   
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@ziyankp/Bixby-Mowl-QR)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RIPPER-SER/)  
 
-[![Deploy](https://www.linkpicture.com/q/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e737667.svg)]()
      </div>
 <br>
 <br >

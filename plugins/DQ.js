@@ -19,15 +19,25 @@ if (Config.WORKTYPE == 'private') {
     var fetch_img = new Array ();
     
     fetch_img[0] = "https://telegra.ph/file/b22b26bca855eda465a49.jpg";
+
     fetch_img[1] = "https://telegra.ph/file/1662d872a5ec9861a8d22.jpg";
+
     fetch_img[2] = "https://telegra.ph/file/1bc0b57c6f03da5f35bad.jpg";
+
     fetch_img[3] = "https://telegra.ph/file/eb11ef8f52a17c1fce7e2.jpg";
+
     fetch_img[4] = "https://telegra.ph/file/084a34ce42cc027df0f7c.jpg";
+
     fetch_img[5] = "https://telegra.ph/file/02b8281bc125374fd1633.jpg";
+
     fetch_img[6] = "https://telegra.ph/file/44e940f6cd613fb3d8e9e.jpg";
+
     fetch_img[7] = "https://telegra.ph/file/fed11bcd5465bd85ae626.jpg";
+
     fetch_img[8] = "https://telegra.ph/file/751825187e1d595a1dd44.jpg";
+
     fetch_img[9] = "https://telegra.ph/file/4bc573347ee4d9e4dcbaa.jpg";
+
     fetch_img[10] = "https://telegra.ph/file/c1f41ceb98053169260e7.jpg";
     
     var i = Math.floor(10*Math.random())
@@ -47,15 +57,25 @@ else if (Config.WORKTYPE == 'public') {
     var fetch_img = new Array ();
     
     fetch_img[0] = "https://telegra.ph/file/b22b26bca855eda465a49.jpg";
+
     fetch_img[1] = "https://telegra.ph/file/1662d872a5ec9861a8d22.jpg";
+
     fetch_img[2] = "https://telegra.ph/file/1bc0b57c6f03da5f35bad.jpg";
+
     fetch_img[3] = "https://telegra.ph/file/eb11ef8f52a17c1fce7e2.jpg";
+
     fetch_img[4] = "https://telegra.ph/file/084a34ce42cc027df0f7c.jpg";
+
     fetch_img[5] = "https://telegra.ph/file/02b8281bc125374fd1633.jpg";
+
     fetch_img[6] = "https://telegra.ph/file/44e940f6cd613fb3d8e9e.jpg";
+
     fetch_img[7] = "https://telegra.ph/file/fed11bcd5465bd85ae626.jpg";
+
     fetch_img[8] = "https://telegra.ph/file/751825187e1d595a1dd44.jpg";
+
     fetch_img[9] = "https://telegra.ph/file/4bc573347ee4d9e4dcbaa.jpg";
+
     fetch_img[10] = "https://telegra.ph/file/c1f41ceb98053169260e7.jpg";
     
     var i = Math.floor(10*Math.random())

@@ -30,7 +30,7 @@ if (Config.WORKTYPE == 'private') {
     fetch_img[9] = "https://telegra.ph/file/4bc573347ee4d9e4dcbaa.jpg";
     fetch_img[10] = "https://telegra.ph/file/c1f41ceb98053169260e7.jpg";
     
-    var i = Math.floor(11*Math.random())
+    var i = Math.floor(10*Math.random())
 
     var respoimage = await axios.get(`${fetch_img[i]}`, { responseType: 'arraybuffer' })
 
@@ -58,7 +58,7 @@ else if (Config.WORKTYPE == 'public') {
     fetch_img[9] = "https://telegra.ph/file/4bc573347ee4d9e4dcbaa.jpg";
     fetch_img[10] = "https://telegra.ph/file/c1f41ceb98053169260e7.jpg";
     
-    var i = Math.floor(11*Math.random())
+    var i = Math.floor(10*Math.random())
 
     var respoimage = await axios.get(`${fetch_img[i]}`, { responseType: 'arraybuffer' })
 

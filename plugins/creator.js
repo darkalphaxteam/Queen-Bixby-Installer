@@ -10,7 +10,7 @@ const exec = require('child_process').exec;
 const os = require("os");
 const fs = require('fs');
 const Config = require('../config')
-Bixby.addCommand({ pattern: 'bosu ?(.*)', fromMe: false, desc: 'creator number' }, (async (message, match) => {
+Bixby.addCommand({ pattern: 'creator ?(.*)', fromMe: false, desc: 'creator number' }, (async (message, match) => {
 
 //coded by Ziyan
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card

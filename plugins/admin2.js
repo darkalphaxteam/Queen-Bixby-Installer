@@ -25,6 +25,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     });
     return sonuc.includes(true);
 }
+if (Config.STANDPLK == 'off' || Config.STANDPLK == 'OFF') {
 if (Config.WORKTYPE == 'admin') {
     
 Asena.addCommand({pattern: 'ban ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
@@ -1578,7 +1579,7 @@ Asena.addCommand({pattern: 'invite ?(.*)', fromMe: false, dontAddCommandList: tr
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-Asena.addCommand({pattern: 'rename ?(.*)', onlyGroup: false, fromMe: true,desc: Asena}, (async (message, match) => {
+Asena.addCommand({pattern: 'rename ?(.*)', onlyGroup: false, fromMe: true, desc:'change group name'}, (async (message, match) => {
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -1588,6 +1589,7 @@ Asena.addCommand({pattern: 'rename ?(.*)', onlyGroup: false, fromMe: true,desc: 
     await message.client.sendMessage(message.jid,'group name changed to  ```' + match[1] + '```' ,MessageType.text);
     }
 ));
+}
 module.exports = {
     checkImAdmin: checkImAdmin
 };

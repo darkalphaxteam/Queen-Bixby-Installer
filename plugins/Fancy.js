@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
-
+//This plugin is made for Bixby Mowl if you want to add this plugin to your bot there will be errors i will fix the error for you contact me in our support
 let Bixby = require('../events');
 let tryconfig = require('../config');
 let v = tryconfig.SESSION

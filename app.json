@@ -108,7 +108,7 @@
         "BROADCAST_NAME": {
             "description": "maalu forward ordertext",
             "required": false,
-            "value": "ꪶ͢ʙͥɪͭxᷤʙᷟʏͤ ᴍᴏᴡʟ"
+            "value": "default"
         },
         "BGM_DURATION": {
             "description": "FUNY BGM DURATION  codded by ziyan",

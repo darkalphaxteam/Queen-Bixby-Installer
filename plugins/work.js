@@ -73,7 +73,7 @@ MyPnky.addCommand({pattern: 'standby ?(.*)', fromMe: true, desc: plk_STN }, (asy
                 });
      await message.sendMessage('your bot is standby now')
     }));
-}
+
 MyPnky.addCommand({pattern: 'run again ?(.*)', fromMe: true, desc: AFN_STN }, (async (message, match) => {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 

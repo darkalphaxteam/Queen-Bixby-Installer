@@ -105,6 +105,11 @@
             "required": true,
             "value": "Bixby/🎗️/💝/✨/📝"
         },
+        "BROADCAST_NAME": {
+            "description": "maalu forward ordertext",
+            "required": false,
+            "value": "ꪶ͢ʙͥɪͭxᷤʙᷟʏͤ ᴍᴏᴡʟ"
+        },
         "BGM_DURATION": {
             "description": "FUNY BGM DURATION  codded by ziyan",
             "required": false,

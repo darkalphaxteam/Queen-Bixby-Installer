@@ -1,19 +1,25 @@
-let e = require('../events');
-let c = require('../config');
-let v = c.SESSION
+/* Copyright (C) 2022 RIPPER-SER.
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+https://github.com/RIPPER-SER/bixbymowl
+*/
+
+let Bixby = require('../events');
+let tryconfig = require('../config');
+let v = tryconfig.SESSION
 let {Fancy} = require('raganork-bot');
 let {MessageType} = require('@adiwajshing/baileys');
 let Language = require('../language');
-let fm = c.WORKTYPE == 'public' ? false : true
-e.addCommand({pattern: 'fancy ?(.*)', fromMe: fm, desc: 'Transforms normal text to cool fancy text. Reply to a text message'}, (async (m, q) => {
+let RS = tryconfig.WORKTYPE == 'public' ? false : true
+Bixby.addCommand({pattern: 'fancy ?(.*)', fromMe: RS, desc: 'Transforms normal text to cool fancy text. Reply to a text message'}, (async (m, q) => {
 if (!m.reply_message) return await m.sendMessage(`_Reply to a text message_ \n Example: .fancy 10 \n Number codes: \n 1. tēxt hērē
 3. ｲ乇ﾒｲ ん乇尺乇
 4. ㄒ乇乂ㄒ 卄乇尺乇
 5. 🅃🄴🅇🅃 🄷🄴🅁🄴
 6. ᏖᏋጀᏖ ᏂᏋᏒᏋ
-7. TE᙭T ᕼEᖇE
+7. TE᙭T ᕼEᖇE  
 8. ȶɛӼȶ ɦɛʀɛ
-9. 𝚃𝚎𝚡𝚝 𝙷𝚎𝚛𝚎        
+9. 𝚃𝚎𝚡𝚝 𝙷𝚎𝚛𝚎  
 10. 𝙏𝙚𝙭𝙩 𝙃𝙚𝙧𝙚        
 11. 𝐓𝐞𝐱𝐭 𝐇𝐞𝐫𝐞        
 12. 𝗧𝗲𝘅𝘁 𝗛𝗲𝗿𝗲        

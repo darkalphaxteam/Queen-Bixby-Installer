@@ -222,6 +222,16 @@
             "required": false,
             "value": "i am alive  \n\n ```coded by ziyan```\n\n```{qt}```"
         },
+        "ALIVE_TWO": {
+            "description": "Set the alive message two name",
+            "required": true,
+            "value": "HEY"
+        },
+        "BIXBY_ALIVE": {
+            "description": "Set the Alive message first name",
+            "required": true,
+            "value": "HELLO"
+        },
         "BAN_MESSAGE": {
             "description": "Customizable Ban Message! Use => default, to change back.",
             "required": false,

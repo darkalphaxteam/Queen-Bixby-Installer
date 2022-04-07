@@ -34,6 +34,7 @@ module.exports = {
     PHONE: process.env.NUMBER === undefined ? '+919605741366' : process.env.NUMBER,   
     OA_NAME: process.env.DEPLOYER === undefined ? 'ziyan' : process.env.DEPLOYER,
     ALL: process.env.ALL_CAPTION === undefined ? 'Made By Bixby Mowl' : process.env.ALL_CAPTION,
+    BC: process.env.BROADCAST_NAME === undefined ? '' : process.env.BROADCAST_NAME,
     MENTION: process.env.TAG_REPLY === undefined ? '436703081866810@s.whatsapp.net' : process.env.TAG_REPLY,
     ADDMSG: process.env.ADD_MESSAGE === undefined ? 'default' : process.env.ADD_MESSAGE,
     PLKS: process.env.THERI_LIST === undefined ? false : process.env.THERI_LIST,

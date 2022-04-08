@@ -310,7 +310,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
         } 
         else {
             var CMD_HELP = '';
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -367,7 +367,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 
 else if (Config.WORKTYPE == 'public') {
 
-    Asena.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
         var img = image.skbuffer(Config.LOGOSK)
         var CMD_HELP = '';
         if (match[1] === '') {
@@ -415,7 +415,7 @@ else if (Config.WORKTYPE == 'public') {
                 }
             );
             await message.client.sendMessage(
-                message.jid, '\n\n*'+ Config.SKDL +'*\n\n```▣ BOT NAME:``` *'+Config.BOT+'*\n\n```▣ Developer:``` *Ameen,Rafi*\n\n```▣ Owner:``` *'+Config.OWNER+'*\n\n```▣ STICKER ON/OFFF:``` *'+Config.STICKERP+'*\n\n```▣ BGM ON/OFF:``` *'+Config.BGMFILTER+'*\n\n```▣ BGM :``` *'+Config.GEAR+'*\n\n```▣ TALKING HELENA :``` *'+Config.CHATBOT+'*\n\n```▣ ANTILINK :``` *'+Config.ANTİLİNK+'*\n\n```▣ WORK TYPE:``` *'+Config.WORKTYPE+'*\n\n∎ ⇓ *Commands ⇓ Read it carefully and give commands hope you enjoy* 🥰 ∎\n\n' + CMD_HELP, MessageType.text, {contextInfo: { forwardingScore: 100, isForwarded: true }, quoted: { key: { participant : '0@s.whatsapp.net'},message: {orderMessage: {itemCount : 123,status: 1,surface : 1,message: Config.SKV,orderTitle: `THIS IS NEW?`,thumbnail: img, sellerJid: Config.JID }}}});
+                message.jid, '\n\n*'+ Config.SKDL +'*\n\n```▣ BOT NAME:``` *'+Config.BOT+'*\n\n```▣ Developer:``` *ZIYAN SER*\n\n```▣ Owner:``` *'+Config.OWNER+'*\n\n```▣ STICKER ON/OFFF:``` *'+Config.STICKERP+'*\n\n```▣ BGM ON/OFF:``` *'+Config.BGMFILTER+'*\n\n```▣ BGM :``` *'+Config.GEAR+'*\n\n```▣ TALKING BIXBY :``` *'+Config.CHATBOT+'*\n\n```▣ ANTILINK :``` *'+Config.ANTİLİNK+'*\n\n```▣ WORK TYPE:``` *'+Config.WORKTYPE+'*\n\n∎ ⇓ *Commands ⇓ Read it carefully and give commands hope you enjoy* 🥰 ∎\n\n' + CMD_HELP, MessageType.text, {contextInfo: { forwardingScore: 100, isForwarded: true }, quoted: { key: { participant : '0@s.whatsapp.net'},message: {orderMessage: {itemCount : 123,status: 1,surface : 1,message: Config.SKV,orderTitle: `THIS IS NEW?`,thumbnail: img, sellerJid: Config.JID }}}});
         } 
         else {
             var CMD_HELP = '';
@@ -474,7 +474,7 @@ else if (Config.WORKTYPE == 'public') {
     }));
 
 
-    Asena.addCommand({pattern: `${skcmd} ?(.*)`, fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    Bixby.addCommand({pattern: `${skcmd} ?(.*)`, fromMe: true, dontAddCommandList: true}, (async (message, match) => {
         var img = image.skbuffer(Config.LOGOSK)
         var CMD_HELP = '';
         if (match[1] === '') {
@@ -527,7 +527,7 @@ else if (Config.WORKTYPE == 'public') {
         } else {
             var CMD_HELP = '';
             
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {

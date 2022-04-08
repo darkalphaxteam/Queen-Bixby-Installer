@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
-const New = require('../events');
+const Bixby = require('../events');
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
 const https = require('https');
@@ -61,7 +61,7 @@ const convertToWav = file => {
         .save('output.wav')
 }
 
-New.addCommand({on: 'text', fromMe: wk, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Bixby.addCommand({on: 'text', fromMe: wk, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (message.message.startsWith('bot') && conf.CHATBOT !== 'true') {        
         var unique_ident = message.client.user.jid.split('@')[0]      
         var finm = message.message.replace('bot', '').replace(' ', '')   
@@ -88,7 +88,7 @@ New.addCommand({on: 'text', fromMe: wk, dontAddCommandList: true, deleteCommand:
         })
     }
 }));
-New.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
+Bixby.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
         if (conf.CHATBOT == 'true' && ((!message.jid.includes('@g.us')) || (message.jid.includes('@g.us') && 
             (( message.mention !== false && message.mention.length !== 0 ) || message.reply_message !== false)))) {
             if (message.jid.includes('@g.us') && (message.mention !== false && message.mention.length !== 0)) {
@@ -220,27 +220,27 @@ var succ_on = ''
 var succ_off = ''
 if (conf.LANG == 'TR') {
     _dsc = 'Tam fonksiyonel helena özelliklerini aktif eder. Hesabınızı bir chatbota dönüştürün!'
-    already_on = 'Helena yapay zekası halihazırda tüm fonksiyonları etkin.'
-    already_off = 'Helena yapay zekası halihazırda yarı fonksiyonel çalışıyor.'
-    succ_on = 'Helena, Tam Fonksiyonel Olarak Açıldı! Lütfen Biraz Bekleyin! ✅'
-    succ_off = 'Helena, Yarı Fonksiyonel Olarak Ayarlandı! Lütfen Biraz Bekleyin! ☑️'
+    already_on = 'Bixby yapay zekası halihazırda tüm fonksiyonları etkin.'
+    already_off = 'Bixby yapay zekası halihazırda yarı fonksiyonel çalışıyor.'
+    succ_on = 'Bixby, Tam Fonksiyonel Olarak Açıldı! Lütfen Biraz Bekleyin! ✅'
+    succ_off = 'Bixby, Yarı Fonksiyonel Olarak Ayarlandı! Lütfen Biraz Bekleyin! ☑️'
 }
 if (conf.LANG == 'EN') {
     fulleva_dsc = 'Turns on AI powered chatbot on to your account!'
-    already_on = 'Helena chatbot is already on.'
+    already_on = 'Bixby chatbot is already on.'
     already_off = 'Helena chatbot is currently turned off!.'
-    succ_on = 'Helena chatbot on! Restarting to make chatbot ✅'
-    succ_off = 'Helena chatbot off Restarting to make normal  ❤️'
+    succ_on = 'Bixby chatbot on! Restarting to make chatbot ✅'
+    succ_off = 'Bixby chatbot off Restarting to make normal❤️'
 }
 if (conf.LANG == 'ML') {
-    fulleva_dsc = 'പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായ Helena chatbot സജീവമാക്കുന്നു. നിങ്ങളുടെ അക്കൗണ്ട് ഒരു ചാറ്റ്ബോട്ടാക്കി മാറ്റുക!'
+    fulleva_dsc = 'പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായ Bixby chatbot സജീവമാക്കുന്നു. നിങ്ങളുടെ അക്കൗണ്ട് ഒരു ചാറ്റ്ബോട്ടാക്കി മാറ്റുക!'
     already_on = 'കൃത്രിമബുദ്ധി ഇതിനകം പൂർണ്ണമായി പ്രവർത്തിക്കുന്നു.'
     already_off = 'AI നിലവിൽ സെമി-ഫംഗ്ഷണൽ ആണ്.'
-    succ_on = 'Helena പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായി തുറന്നു! കുറച്ച് കാത്തിരിക്കൂ! ✅'
-    succ_off = 'Helena സെമി-ഫങ്ഷണൽ ആയി സജ്ജമാക്കുക! കുറച്ച് കാത്തിരിക്കൂ! ☑️'
+    succ_on = 'Bixby പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായി തുറന്നു! കുറച്ച് കാത്തിരിക്കൂ! ✅'
+    succ_off = 'Bixby സെമി-ഫങ്ഷണൽ ആയി സജ്ജമാക്കുക! കുറച്ച് കാത്തിരിക്കൂ! ☑️'
 }
 
-New.addCommand({ pattern: 'helena ?(.*)', desc: _dsc, fromMe: true,dontAddCommandList: true, usage: '.amalser on / off' }, (async (message, match) => {
+Bixby.addCommand({ pattern: 'bixby ?(.*)', desc: _dsc, fromMe: true,dontAddCommandList: true, usage: '.bixby on / off' }, (async (message, match) => {
     var eva_status = `${conf.CHATBOT}`
     if (match[1] == 'on') {
         if (eva_status == 'true') {

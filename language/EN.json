@@ -78,6 +78,11 @@
             "NEED_REPLY": "```Please reply to a message!```",
             "MUST_TEXT": "```Please reply to any message```"
         },
+        "font":{
+            "FONT_DESC": "Make your text fancy.",
+            "NEED_WORD":"*You must enter a word*",
+            "NO_RESULT": "*I can not make this fancy*"
+        },
         "heroku": {
             "RESTART_DESC": "Restart Bixby Mowl",
             "RESTART_MSG": "*Bixby Mowl Restarting*",

@@ -48,6 +48,16 @@
             "INVITE_DESC": "Provides the group's invitation link.",
             "INVITE": "```Invitation link: ```"
         },
+        "info": {
+            "INFO_DESC": "Show chat details",
+            "GRP_NAME": "*ℹ️ Group name :*",
+            "GRP_JID": "*💬 Group JID :*",
+            "GRP_OWN": "*⚜️ Group owner :*",
+            "GRP_COD": "*🆔 Group invite link :*",
+            "GRP_DES": "*🗨️ Group description :*",
+            "PRO_JID": "*💬 User JID :*",
+            "PRO_DES": "*🗨️ Description :*"
+        },
         "locate": {
             "L_DESC": "It send your location.",
             "L_WARN": "Please open your location before using command!"

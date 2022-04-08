@@ -419,7 +419,7 @@ else if (Config.WORKTYPE == 'public') {
         } 
         else {
             var CMD_HELP = '';
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {

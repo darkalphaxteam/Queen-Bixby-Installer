@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 //THIS PLUGIN BY ZIYAN
-//DONT COPY THIS WITHOUT CREDI
+//DONT COPY THIS WITHOUT CREDIT
 
 
 //BASIC REQUIREMENTS

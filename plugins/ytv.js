@@ -2,6 +2,7 @@ const Bixby = require('../events');
 const { MessageType, Mimetype } = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
+const bixbybot = require('../bixbybot');
 const LOAD_ING = "*ᴛʀʏɪɴɢ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ*"
 const UPLOAD_ING = "*✅️ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ* \n\n *ᴜᴘʟᴏᴀᴅɪɴɢ ɪɴ ᴘʀᴏᴄᴇᴄᴄ...*"
 const axios = require('axios')
@@ -45,7 +46,7 @@ var reply = await message.client.sendMessage(message.jid, LOAD_ING , MessageType
         msg +=  `SIZE :${result.size}\n\n`
         msg +=  `DOWNLOADING LINK :${result.url_video}\n\n`
         msg += '```' 
-	 return await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video, {mimetype: Mimetype.mp4, ptt: false , caption: msg , thumbnail: bixby.tm_b}); 
+	 return await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video, {mimetype: Mimetype.mp4, ptt: false , caption: msg , thumbnail: bixbybot.tm_b}); 
 });
     
 

@@ -96,7 +96,7 @@ $ cd Bixby-Mowl
 $ chmod +x *
 $ npm install @adiwajshing/baileys
 $ npm install chalk
-$ node Julie.js
+$ node qr.js
 ```
       
 ```js
@@ -105,7 +105,7 @@ $ git clone https://github.com/RIPPER-SER/Bixby-Mowl
 $ cd Bixby-Mowl
 $ chmod +x *
 $ npm i
-$ node Julie.js
+$ node qr.js
    // scan the qr using whatsapp web on your phone
 $ node bot.js
 ```

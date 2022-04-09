@@ -44,6 +44,8 @@ Bixby.addCommand({ pattern: 'anime2 ?(.*)', fromMe: false, dontAddCommandList: t
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/866958cf4f68ebf179f31.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime3 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -52,6 +54,8 @@ Bixby.addCommand({ pattern: 'anime3 ?(.*)', fromMe: false, dontAddCommandList: t
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/ad5fb1e028efc3a2aacd1.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime4 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -60,6 +64,8 @@ Bixby.addCommand({ pattern: 'anime4 ?(.*)', fromMe: false, dontAddCommandList: t
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/99aba189708b7946a2613.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime5 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -68,6 +74,8 @@ Bixby.addCommand({ pattern: 'anime5 ?(.*)', fromMe: false, dontAddCommandList: t
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/a8c84aeec0cf5607c383f.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime6 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -77,6 +85,8 @@ Bixby.addCommand({ pattern: 'anime6 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
+    }));
+
 Bixby.addCommand({ pattern: 'anime7 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -84,6 +94,8 @@ Bixby.addCommand({ pattern: 'anime7 ?(.*)', fromMe: false, dontAddCommandList: t
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/f3301e400a1b90847fed4.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime8 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -91,7 +103,9 @@ Bixby.addCommand({ pattern: 'anime8 ?(.*)', fromMe: false, dontAddCommandList: t
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/8f6a01ead21040c6681ff.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})       
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
+
+    }));      
         
 Bixby.addCommand({ pattern: 'anime9 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -99,7 +113,9 @@ Bixby.addCommand({ pattern: 'anime9 ?(.*)', fromMe: false, dontAddCommandList: t
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/79af43d68f786bafc82d8.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})        
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));        
         
 Bixby.addCommand({ pattern: 'anime10 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -107,14 +123,19 @@ Bixby.addCommand({ pattern: 'anime10 ?(.*)', fromMe: false, dontAddCommandList: 
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/7d6adafc332ec19864364.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})        
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
+        
 Bixby.addCommand({ pattern: 'anime11 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/d4542b688fb1fe8908453.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})        
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})  
+
+    }));      
         
 Bixby.addCommand({ pattern: 'anime12 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -124,6 +145,8 @@ Bixby.addCommand({ pattern: 'anime12 ?(.*)', fromMe: false, dontAddCommandList: 
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
+    }));
+
 Bixby.addCommand({ pattern: 'anime13 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -131,6 +154,8 @@ Bixby.addCommand({ pattern: 'anime13 ?(.*)', fromMe: false, dontAddCommandList: 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/1ddf5eab3b01e62bc56ea.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime14 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -139,6 +164,8 @@ Bixby.addCommand({ pattern: 'anime14 ?(.*)', fromMe: false, dontAddCommandList: 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/3331055329b4faa1db1fc.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
+
+    }));
         
 Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -146,7 +173,9 @@ Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: 
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/07fa6f51c56c3e295fbeb.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})   
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
+
+    }));  
         
 Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -154,7 +183,9 @@ Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: 
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/07fa6f51c56c3e295fbeb.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})        
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
+
+    }));       
         
 Bixby.addCommand({ pattern: 'anime16 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
@@ -162,5 +193,7 @@ Bixby.addCommand({ pattern: 'anime16 ?(.*)', fromMe: false, dontAddCommandList: 
 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/3dd0947d35bdd83aaf3e1.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})        
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
+
+    }));       
  }

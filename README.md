@@ -14,7 +14,7 @@
 
 <div align="center">
   
-## [![BIXBY](https://readme-typing-svg.herokuapp.com?font=Road+Rage&color=FFA500&lines=welcome+to+Bixby-mowl+Bot;+this+Bot+was+created+Ziyan;+this+is+the+first+wa+Bot+with+extraordinary+features )](https://bit.ly/2VM4lxF)
+## [![BIXBY](https://readme-typing-svg.herokuapp.com?font=Road+Rage&color=5D0F99&lines=welcome+to+Bixby-mowl+Bot;+this+Bot+was+created+Ziyan;+this+is+the+first+wa+Bot+with+extraordinary+features )](https://bit.ly/2VM4lxF)
 
  </a>
 </p>

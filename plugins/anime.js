@@ -11,7 +11,7 @@ const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-    Bixby.addCommand({pattern: 'anime', fromMe: true, desc: 'random anime image'}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'ranime', fromMe: true, desc: 'random anime image'}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -105,7 +105,7 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Bixby.addCommand({pattern: 'anime', fromMe: false, desc:'random anime image '}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'ranime', fromMe: false, desc:'random anime image '}, (async (message, match) => {
 
     var r_text = new Array ();
 

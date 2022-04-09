@@ -24,7 +24,7 @@
 </p>
   <p align="center">
 <a href="https://github.com/RIPPER-SER
-"><img title="Author" src="https://img.shields.io/badge/Author-RIPPER SER/_Bixby_Mowl_?color=blue&style=for-the-badge&logo=whatsapp"></a>
+"><img title="Author" src="https://img.shields.io/badge/Author-RIPPER-SER/_Bixby_Mowl_?color=blue&style=for-the-badge&logo=whatsapp"></a>
 </p>
 </div>
 <p align="center">

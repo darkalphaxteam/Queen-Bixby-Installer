@@ -93,6 +93,11 @@
             "NEED_WORD":"*You must enter a word*",
             "NO_RESULT": "*I can not make this fancy*"
         },
+        "random_pic":{
+            "BTS_DESC": "Get BTS random images.",
+            "EXO_DESC" : "Get EXO random images.",
+            "BP_DESC": "Get Black Pink random images."
+        },
         "heroku": {
             "RESTART_DESC": "Restart Bixby Mowl",
             "RESTART_MSG": "*Bixby Mowl Restarting*",

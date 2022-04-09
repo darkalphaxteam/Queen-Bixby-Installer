@@ -1,3 +1,13 @@
+/* Copyright (C) 2022 RIPPER-SER.
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+https://github.com/RIPPER-SER/bixbymowl
+*/
+//THIS PLUGIN BY ZIYAN
+//DONT COPY THIS WITHOUT CREDI
+
+
+//BASIC REQUIREMENTS
 const Bixby = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
@@ -6,7 +16,7 @@ const Config = require('../config');
 const ll ="*```Enter a word```"
 const Ln = "ANIME MAKER"
  const code = "*_10 ANIME LOGO MAKER"
-
+//Work type change work type it's your prefered need
 if (Config.WORKTYPE == 'public') {
     
 Bixby.addCommand({pattern: 'animepack', fromMe: false, desc: Ln,}, (async (message, match) => {

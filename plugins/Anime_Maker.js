@@ -15,7 +15,7 @@ const axios = require('axios');
 const Config = require('../config');
 const ll ="*```Enter a word```"
 const Ln = "ANIME MAKER"
- const code = "*_10 ANIME LOGO MAKER"
+ const code = "*_anime1 to anime16"
 //Work type change work type it's your prefered need
 if (Config.WORKTYPE == 'public') {
     

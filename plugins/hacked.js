@@ -7,7 +7,8 @@ const con = require('../config');
 const ENGAY = "Hack the person you reply to."
 
 // Need Reply
-const ENREP = "```¡Debes responder algún mensaje!```"
+const ENREP = "```You must reply to a message!```"
+"
 
 
 if (con.WORKTYPE === 'private') {

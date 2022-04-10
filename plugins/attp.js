@@ -4,8 +4,10 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
+THIS PlUGIN BY WHATS ASENA REDITED ZIYAN
 
 
+//BASIC REQUIREMENTS
 const Bixby = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');

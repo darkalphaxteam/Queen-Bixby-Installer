@@ -3,8 +3,9 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/Bixby-Mowl
 */
+//DONT COPY THIS PlUGIN WITHOUT CREDIT
 
-
+//BASIC REQUIREMENTS
 const Bixby = require('../events');
 
 const { MessageType, Mimetype } = require('@adiwajshing/baileys');

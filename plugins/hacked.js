@@ -4,7 +4,7 @@ const fs = require('fs');
 const con = require('../config');
 
 // Descriptions
-const ENGAY = "Hackea a la persona que le respondas el mensaje."
+const ENGAY = "Hack the person you reply to."
 
 // Need Reply
 const ENREP = "```¡Debes responder algún mensaje!```"

@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
-THIS PlUGIN BY WHATS ASENA REDITED ZIYAN
+//THIS PlUGIN BY WHATS ASENA REDITED ZIYAN
 
 
 //BASIC REQUIREMENTS

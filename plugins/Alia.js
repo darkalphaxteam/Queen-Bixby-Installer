@@ -3,7 +3,10 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
+//Dont copy this file without credit
 
+
+//BASIC REQUIREMENTS
 const Asena = require('../events');
 
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');

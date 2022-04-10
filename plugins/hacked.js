@@ -8,7 +8,6 @@ const ENGAY = "Hack the person you reply to."
 
 // Need Reply
 const ENREP = "```You must reply to a message!```"
-"
 
 
 if (con.WORKTYPE === 'private') {

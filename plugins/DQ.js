@@ -4,6 +4,10 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
+//THIS PlUGIN BY ZIYAN DONT COPY THIS WITHOUT CREDIT
+
+//BASIC REQUIREMENTS
+
 const Asena = require('../events');
 
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');

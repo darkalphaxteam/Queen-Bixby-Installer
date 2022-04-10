@@ -64,13 +64,13 @@ Asena.addCommand({pattern: 'chocolate', fromMe: true, OnlyGroup: true}, (async (
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n🍫 <   Or not. you already have');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>🍫 I can't sacrifice you...');
+    await message.sendMessage('{__/}\n( • - • )\n/>🍫 I cant sacrifice you...');
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n/>☕️ I better give you this');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this too but don't break it please');
+    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this too but dont break it please');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>💔 I said don't break it');
+    await message.sendMessage('{__/}\n( • - • )\n/>💔 I said dont break it');
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n💔< You must be sorry you did..');
     await new Promise(r => setTimeout(r, 1000));
@@ -78,10 +78,10 @@ Asena.addCommand({pattern: 'chocolate', fromMe: true, OnlyGroup: true}, (async (
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n/>💔 I hate you');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this one more time but if you break it i'll be mad');
+    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this one more time but if you break it ill be mad');
     await new Promise(r => setTimeout(r, 1800));
 
-    await message.sendMessage('Hecho por *Skueletor* >:D');
+    await message.sendMessage('Made by *Bixby Mowl* >:D');
 
 }));
 }
@@ -140,13 +140,13 @@ Asena.addCommand({pattern: 'chocolate', fromMe: false, OnlyGroup: true}, (async 
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n🍫<   Or not. you already have');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>🍫 I can't sacrifice you...');
+    await message.sendMessage('{__/}\n( • - • )\n/>🍫 I cant sacrifice you...');
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n/>☕️ I better give you this');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this too but don't break it please');
+    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this too but dont break it please');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>💔 I said don't break it');
+    await message.sendMessage('{__/}\n( • - • )\n/>💔 I said dont break it');
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n💔< You must be sorry you did...');
     await new Promise(r => setTimeout(r, 1000));
@@ -154,7 +154,7 @@ Asena.addCommand({pattern: 'chocolate', fromMe: false, OnlyGroup: true}, (async 
     await new Promise(r => setTimeout(r, 1000));
     await message.sendMessage('{__/}\n( • - • )\n/>💔 I hate you');
     await new Promise(r => setTimeout(r, 1000));
-    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this one more time but if you break it i'll be mad');
+    await message.sendMessage('{__/}\n( • - • )\n/>❤️ take this one more time but if you break it ill be mad');
     await new Promise(r => setTimeout(r, 1800));
 
     await message.sendMessage('Made by *Bixby-Mowl* >:D');

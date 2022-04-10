@@ -206,7 +206,6 @@ Bixby.addCommand({pattern: 'animepack', fromMe: false, desc: Ln,}, (async (messa
       message.jid,code, MessageType.text);
   
   }));
-  
 Bixby.addCommand({ pattern: 'anime1 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -215,8 +214,7 @@ Bixby.addCommand({ pattern: 'anime1 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-    
+    }));   
 Bixby.addCommand({ pattern: 'anime2 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -225,8 +223,7 @@ Bixby.addCommand({ pattern: 'anime2 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-        
+    }));     
 Bixby.addCommand({ pattern: 'anime3 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -235,8 +232,7 @@ Bixby.addCommand({ pattern: 'anime3 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-        
+    }));    
 Bixby.addCommand({ pattern: 'anime4 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -246,7 +242,6 @@ Bixby.addCommand({ pattern: 'anime4 ?(.*)', fromMe: false, dontAddCommandList: t
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
     }));
-        
 Bixby.addCommand({ pattern: 'anime5 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -255,8 +250,7 @@ Bixby.addCommand({ pattern: 'anime5 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-        
+    }));   
 Bixby.addCommand({ pattern: 'anime6 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -266,7 +260,6 @@ Bixby.addCommand({ pattern: 'anime6 ?(.*)', fromMe: false, dontAddCommandList: t
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
     }));
-
 Bixby.addCommand({ pattern: 'anime7 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -275,8 +268,7 @@ Bixby.addCommand({ pattern: 'anime7 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-        
+    }));     
 Bixby.addCommand({ pattern: 'anime8 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -285,8 +277,7 @@ Bixby.addCommand({ pattern: 'anime8 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
 
-    }));      
-        
+    }));        
 Bixby.addCommand({ pattern: 'anime9 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -295,8 +286,7 @@ Bixby.addCommand({ pattern: 'anime9 ?(.*)', fromMe: false, dontAddCommandList: t
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));        
-        
+    }));           
 Bixby.addCommand({ pattern: 'anime10 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -305,8 +295,7 @@ Bixby.addCommand({ pattern: 'anime10 ?(.*)', fromMe: false, dontAddCommandList: 
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-        
+    }));     
 Bixby.addCommand({ pattern: 'anime11 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -315,8 +304,7 @@ Bixby.addCommand({ pattern: 'anime11 ?(.*)', fromMe: false, dontAddCommandList: 
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})  
 
-    }));      
-        
+    }));          
 Bixby.addCommand({ pattern: 'anime12 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -326,7 +314,6 @@ Bixby.addCommand({ pattern: 'anime12 ?(.*)', fromMe: false, dontAddCommandList: 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
     }));
-
 Bixby.addCommand({ pattern: 'anime13 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -335,8 +322,7 @@ Bixby.addCommand({ pattern: 'anime13 ?(.*)', fromMe: false, dontAddCommandList: 
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));
-        
+    }));      
 Bixby.addCommand({ pattern: 'anime14 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -344,9 +330,8 @@ Bixby.addCommand({ pattern: 'anime14 ?(.*)', fromMe: false, dontAddCommandList: 
         var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/3331055329b4faa1db1fc.jpg`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
-
-    }));
-        
+    
+    }));    
 Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -355,8 +340,7 @@ Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: 
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
 
-    }));  
-        
+    }));        
 Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
@@ -365,8 +349,7 @@ Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: 
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
 
-    }));      
-        
+    }));         
 Bixby.addCommand({ pattern: 'anime16 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);

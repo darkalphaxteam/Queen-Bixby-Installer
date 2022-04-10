@@ -197,6 +197,8 @@ Bixby.addCommand({ pattern: 'anime16 ?(.*)', fromMe: false, dontAddCommandList: 
 
     }));
 
+ }
+
 if (Config.WORKTYPE == 'private') {
 Bixby.addCommand({pattern: 'animepack', fromMe: true, desc: Ln,}, (async (message, match) => {
 

@@ -22,7 +22,7 @@ if (con.WORKTYPE === 'private') {
             });
 
     await new Promise(r => setTimeout(r, 1500));
-    await message.sendMessage('Python Version: 3.6\nHacker: *Skueletor*\nWEB API: True');
+    await message.sendMessage('Python Version: 3.6\nHacker: *BIXBY*\nWEB API: True');
     await new Promise(r => setTimeout(r, 1200));
     await message.sendMessage('██╗░░██╗\n██║░░██║\n███████║\n██╔══██║\n██║░░██║\n╚═╝░░╚═╝');
     await new Promise(r => setTimeout(r, 700));

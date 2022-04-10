@@ -48,6 +48,11 @@
             "INVITE_DESC": "Provides the group's invitation link.",
             "INVITE": "```Invitation link: ```"
         },
+        "random_pic":{
+            "BTS_DESC": "Get BTS random images.",
+            "EXO_DESC" : "Get EXO random images.",
+            "BP_DESC": "Get Black Pink random images."
+        },
         "info": {
             "INFO_DESC": "Show chat details",
             "GRP_NAME": "*ℹ️ Group name :*",

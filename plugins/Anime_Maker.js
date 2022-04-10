@@ -350,13 +350,13 @@ Bixby.addCommand({ pattern: 'anime15 ?(.*)', fromMe: false, dontAddCommandList: 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
 
     }));         
-Bixby.addCommand({ pattern: 'anime16 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
+Bixby.addCommand({ pattern: 'anime16 ?(.*)', fromMe: true, dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '' ) return await message.sendMessage(ll);
 
-        var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/3dd0947d35bdd83aaf3e1.jpg`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`https://docs-jojo.herokuapp.com/api/meme-gen?top=%20&bottom=${encodeURIComponent(match[1])}&img=https://telegra.ph/file/816aaa82629bfa202f3d4.jpg`, { responseType: 'arraybuffer' })
 
-        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL}) 
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption:Config.ALL})
 
-    }));    
-}
+    }));
+ }

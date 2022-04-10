@@ -4,7 +4,9 @@ you may not use this file except in compliance with the License.
 https://github.com/RIPPER-SER/bixbymowl
 */
 
+//THIS PLUGIN RE EDITED BY ZIYAN
 
+//BASIC REQUIREMENTS
 const Asena = require('../events');
 const axios = require('axios');
 const {MessageType, Mimetype, MessageOptions} = require('@adiwajshing/baileys');

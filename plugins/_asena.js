@@ -1,8 +1,4 @@
-/* Copyright (C) Yusuf Usta.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-Remoded by - Amalser
-*/
+
 
 const Bixby = require('../events');
 const Config = require('../config');
@@ -11,13 +7,13 @@ const fs = require("fs")
 const image = require('../buffer');
 const Language = require('../language');
 const Lang = Language.getString('_asena');
-var skcmd, sk1,sk2,sk3,sk4
+var rmcmd, rm1,rm2,rm3,rm4
 var split = Config.ALLEMOJI.split('/');
-         sk4 = split[4];
-         sk3 = split[3];
-         sk2 = split[2];
-         sk1 = split[1];
-         skcmd = split[0];        
+         rm4 = split[4];
+         rm3 = split[3];
+         rm2 = split[2];
+         rm1 = split[1];
+         rmcmd = split[0];        
 
 if (Config.WORKTYPE == 'private') {
 
@@ -25,7 +21,7 @@ if (Config.WORKTYPE == 'private') {
         
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -133,7 +129,7 @@ if (Config.WORKTYPE == 'private') {
 
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -262,7 +258,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -371,7 +367,7 @@ else if (Config.WORKTYPE == 'public') {
         var img = image.skbuffer(Config.LOGOSK)
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -389,28 +385,28 @@ else if (Config.WORKTYPE == 'public') {
                         HANDLER = '.';
                     }
                     if (command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n\n';
                     }
                     if (command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  sk2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  rm2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (!command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_\n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_\n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if  (command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
                     }
                     if  (!command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '   + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  sk4 + ' '  + Lang.WARN + ':* ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '   + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  rm4 + ' '  + Lang.WARN + ':* ' + command.warn + '\n\n'
                     }
                 }
             );
@@ -440,28 +436,28 @@ else if (Config.WORKTYPE == 'public') {
                             HANDLER = '.';
                         }
                        if (command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n\n';
                     }
                     if (command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  sk2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  rm2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (!command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_\n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_\n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if  (command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
                     }
                     if  (!command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                         }
                     }
                 }
@@ -474,11 +470,11 @@ else if (Config.WORKTYPE == 'public') {
     }));
 
 
-    Bixby.addCommand({pattern: `${skcmd} ?(.*)`, fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    Bixby.addCommand({pattern: `${rmcmd} ?(.*)`, fromMe: true, dontAddCommandList: true}, (async (message, match) => {
         var img = image.skbuffer(Config.LOGOSK)
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            Bixby.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -496,28 +492,28 @@ else if (Config.WORKTYPE == 'public') {
                         HANDLER = '.';
                     }
                     if (command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n\n';
                     }
                     if (command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  sk2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  rm2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (!command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_\n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_\n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if  (command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
                     }
                     if  (!command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '   + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  sk4 + ' '  + Lang.WARN + ':* ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '   + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  rm4 + ' '  + Lang.WARN + ':* ' + command.warn + '\n\n'
                     }
                 }
             );
@@ -548,25 +544,25 @@ else if (Config.WORKTYPE == 'public') {
                             HANDLER = '.';
                         }
                         if (!command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n\n';
                     }
                     if (command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  sk2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '+\n' + '' +  rm2  + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (!command.desc == '' && !command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_\n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_\n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if (command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  sk3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' +  rm3  + ' '  + Lang.EXAMPLE + ': ' + command.usage + '_ \n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                     }
                     if  (command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n\n'
                     }
                     if  (!command.desc == '' && !command.usage == '' && !command.warn == '') {
-                        CMD_HELP += '' +  sk1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  sk2  + ' '  + command.desc + '_ \n' +  sk3 + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  sk4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
+                        CMD_HELP += '' +  rm1  + ' '  + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '\n' + '' +  rm2  + ' '  + command.desc + '_ \n' +  rm3 + ' '  + Lang.EXAMPLE + ': ' + command.usage + '\n' + '' +  rm4 + ' '  + Lang.WARN + ': ' + command.warn + '\n\n'
                         }
                     }
                 }

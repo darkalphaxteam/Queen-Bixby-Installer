@@ -1,7 +1,7 @@
 
 FROM fusuf/whatsasena:latest
 
-RUN git clone https://github.com/RIPPER-SER/Bixby-Mowl /root/Bixby
+RUN git clone https://github.com/thinura2003/Bixby-Mowl /root/Bixby
 WORKDIR /root/Bixby/
 ENV TZ=Europe/Istanbul
 RUN npm install supervisor -g

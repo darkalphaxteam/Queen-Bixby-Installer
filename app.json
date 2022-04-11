@@ -1,11 +1,11 @@
 {
     "name": "Bixby-Mowl",
     "description": "Bixby Mowl is the Modified Version of WhatsAsena, Made By ZIYAN with Baileys.",
-    "logo": "https://telegra.ph/file/87ed138f87a902f36b863.jpg",
+    "logo": "https://telegra.ph/file/e115d1bda25210ddba9ec.jpg",
     "keywords": ["whatsapp", "userbot", "julie", "WhatsAsena", "mwol", "bot", "ai"],
-    "repository": "https://github.com/RIPPER-SER/Bixby-Mowl",
-    "website":   "https://github.com/RIPPER-SER/Bixby-Mowl",
-    "success_url": "https://github.com/RIPPER-SER/Bixby-Mowl",
+    "repository": "https://github.com/thinura2003/Bixby-Mowl",
+    "website":   "https://github.com/thinura2003/Bixby-Mowl",
+    "success_url": "https://github.com/thinura2003/Bixby-Mowl",
     "stack": "container",
     "env": {
         "BIXBYMOWL_CODE": {

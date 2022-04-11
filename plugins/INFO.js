@@ -9,18 +9,6 @@ Asena.addCommand({pattern: 'git', fromMe: false, desc: "Gives github link of the
 
     var skl = await axios.get("https://i.imgur.com/w89FHm7.jpeg", { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer(skl.data), MessageType.image, {mimetype: Mimetype.png, caption: `*Bot Name: Amalser*
-
-*Creator number : wa.me/919446072492?text=Hii%20Amal%20Ser.%20*
-
- *To check update .update   To update Bot .update now*
-
- *Bot making video : https://youtu.be/Tb1B-rS52uo*
-     
- *Instagram id: https://www.instagram.com/p/CCdcH3FBd1a/?utm_medium=copy_link*
-
- *Yt_PASSWORD: _________(password on this video watch it full)*
-
- *githublink : https://github.com/RIPPER-SER/Bixby-Mowl*`}) 
+    await message.sendMessage(Buffer(skl.data), MessageType.image, {mimetype: Mimetype.png, caption: ``}) 
 
 }));

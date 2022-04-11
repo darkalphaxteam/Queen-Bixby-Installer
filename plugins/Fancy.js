@@ -1,1 +1,69 @@
-const _0x18d5eb=_0x2df4;(function(_0x4bd170,_0x1b0d02){const _0x19a9d8=_0x2df4,_0x29a150=_0x4bd170();while(!![]){try{const _0x4f73b8=parseInt(_0x19a9d8(0x139))/0x1+parseInt(_0x19a9d8(0x144))/0x2+-parseInt(_0x19a9d8(0x12c))/0x3*(parseInt(_0x19a9d8(0x14b))/0x4)+parseInt(_0x19a9d8(0x150))/0x5+-parseInt(_0x19a9d8(0x156))/0x6*(-parseInt(_0x19a9d8(0x13d))/0x7)+-parseInt(_0x19a9d8(0x157))/0x8+-parseInt(_0x19a9d8(0x148))/0x9*(-parseInt(_0x19a9d8(0x12f))/0xa);if(_0x4f73b8===_0x1b0d02)break;else _0x29a150['push'](_0x29a150['shift']());}catch(_0x1f699d){_0x29a150['push'](_0x29a150['shift']());}}}(_0x5481,0x7f9bb));function _0x5481(){const _0x45f4a=['res22','res20','text','../language','1593wfocFS','res28','res24','1016550ciibio','public','res21','_Reply\x20to\x20a\x20text\x20message_\x20\x0a\x20Example:\x20.fancy\x2010\x20\x0a\x20Number\x20codes:\x20\x0a\x201.\x20tēxt\x20hērē\x0a\x0a3.\x20ｲ乇ﾒｲ\x20ん乇尺乇\x0a\x0a4.\x20ㄒ乇乂ㄒ\x20卄乇尺乇\x0a\x0a5.\x20🅃🄴🅇🅃\x20🄷🄴🅁🄴\x0a\x0a6.\x20ᏖᏋጀᏖ\x20ᏂᏋᏒᏋ\x0a\x0a7.\x20TE᙭T\x20ᕼEᖇE\x0a\x0a8.\x20ȶɛӼȶ\x20ɦɛʀɛ\x0a\x0a9.\x20𝚃𝚎𝚡𝚝\x20𝙷𝚎𝚛𝚎\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a10.\x20𝙏𝙚𝙭𝙩\x20𝙃𝙚𝙧𝙚\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a11.\x20𝐓𝐞𝐱𝐭\x20𝐇𝐞𝐫𝐞\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a12.\x20𝗧𝗲𝘅𝘁\x20𝗛𝗲𝗿𝗲\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a13.\x20𝘛𝘦𝘹𝘵\x20𝘏𝘦𝘳𝘦\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a14.\x20Tҽxƚ\x20Hҽɾҽ\x0a\x0a15.\x20₮ɆӾ₮\x20ⱧɆⱤɆ\x0a\x0a16.\x20†êx†\x20Hêrê\x0a\x0a17.\x20тєχт\x20нєяє\x0a\x0a18.\x20Ͳҽ×է\x20Ƕҽɾҽ\x0a\x0a19.\x20ƬΣXƬ\x20ΉΣЯΣ\x0a\x0a20.\x20ₜₑₓₜ\x20ₕₑᵣₑ\x0a\x0a21.\x20ᵀᵉˣᵗ\x20ᴴᵉʳᵉ\x0a\x0a22.\x20ՇєאՇ\x20ђєгє\x0a\x0a23.\x20𝕋𝕖𝕩𝕥\x20ℍ𝕖𝕣𝕖\x20\x20\x20\x20\x20\x20\x20\x0a\x0a24.\x20𝕿𝖊𝖝𝖙\x20𝕳𝖊𝖗𝖊\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a25.\x20🆃🅴🆇🆃\x20🅷🅴🆁🅴\x0a\x0a26.\x20𝓣𝓮𝔁𝓽\x20𝓗𝓮𝓻𝓮\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a27.\x20𝔗𝔢𝔵𝔱\x20ℌ𝔢𝔯𝔢\x20\x20\x20\x20\x20\x20\x20\x0a\x0a28.\x20Ｔｅｘｔ\x20Ｈｅｒｅ\x0a\x0a29.\x20ᴛᴇxᴛ\x20ʜᴇʀᴇ','res2','@adiwajshing/baileys','jid','res13','res8','../config','289366oolMWU','res19','res12','sendMessage','222257MUTcRm','res15','client','res10','res18','res16','res4','1154250TylIRm','fancy\x20?(.*)','reply_message','res3','27DlkRqF','res1','res17','3412xRwGPk','data','raganork-bot','res29','res14','1865015oCFgrG','../events','Wrong\x20parameter.\x20Use\x20numbers\x20from\x20fancy\x20table\x20below\x2030','res27','res7','res11','42AuWwro','6328720SDtkFi'];_0x5481=function(){return _0x45f4a;};return _0x5481();}function _0x2df4(_0x503dca,_0x3afbf0){const _0x54819d=_0x5481();return _0x2df4=function(_0x2df4f2,_0x47e25b){_0x2df4f2=_0x2df4f2-0x12b;let _0x283a1f=_0x54819d[_0x2df4f2];return _0x283a1f;},_0x2df4(_0x503dca,_0x3afbf0);}let Bixby=require(_0x18d5eb(0x151)),ziyan=require(_0x18d5eb(0x138)),v=c['SESSION'],{Fancy}=require(_0x18d5eb(0x14d)),{MessageType}=require(_0x18d5eb(0x134)),Language=require(_0x18d5eb(0x12b)),fm=c['WORKTYPE']==_0x18d5eb(0x130)?![]:!![];Bixby['addCommand']({'pattern':_0x18d5eb(0x145),'fromMe':fm,'desc':'Transforms\x20normal\x20text\x20to\x20cool\x20fancy\x20text.\x20Reply\x20to\x20a\x20text\x20message'},async(_0x52c37f,_0x30994e)=>{const _0x13312c=_0x18d5eb;if(!_0x52c37f['reply_message'])return await _0x52c37f[_0x13312c(0x13c)](_0x13312c(0x132));var _0x3fc2e4=Fancy(_0x52c37f[_0x13312c(0x146)][_0x13312c(0x15a)],v),_0x2f6ce3;if(_0x30994e[0x1]=='1')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x149)];if(_0x30994e[0x1]=='2')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x133)];if(_0x30994e[0x1]=='3')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x147)];if(_0x30994e[0x1]=='4')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x143)];if(_0x30994e[0x1]=='5')_0x2f6ce3=_0x3fc2e4['res5'];if(_0x30994e[0x1]=='6')_0x2f6ce3=_0x3fc2e4['res6'];if(_0x30994e[0x1]=='7')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x154)];if(_0x30994e[0x1]=='8')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x137)];if(_0x30994e[0x1]=='9')_0x2f6ce3=_0x3fc2e4['res9'];if(_0x30994e[0x1]=='10')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x140)];if(_0x30994e[0x1]=='11')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x155)];if(_0x30994e[0x1]=='12')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x13b)];if(_0x30994e[0x1]=='13')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x136)];if(_0x30994e[0x1]=='14')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x14f)];if(_0x30994e[0x1]=='15')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x13e)];if(_0x30994e[0x1]=='16')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x142)];if(_0x30994e[0x1]=='17')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x14a)];if(_0x30994e[0x1]=='18')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x141)];if(_0x30994e[0x1]=='19')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x13a)];if(_0x30994e[0x1]=='20')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x159)];if(_0x30994e[0x1]=='21')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x131)];if(_0x30994e[0x1]=='22')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x158)];if(_0x30994e[0x1]=='23')_0x2f6ce3=_0x3fc2e4['res23'];if(_0x30994e[0x1]=='24')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x12e)];if(_0x30994e[0x1]=='25')_0x2f6ce3=_0x3fc2e4['res25'];if(_0x30994e[0x1]=='26')_0x2f6ce3=_0x3fc2e4['res26'];if(_0x30994e[0x1]=='27')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x153)];if(_0x30994e[0x1]=='28')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x12d)];if(_0x30994e[0x1]=='29')_0x2f6ce3=_0x3fc2e4[_0x13312c(0x14e)];if(parseInt(_0x30994e[0x1])>0x1e)_0x2f6ce3=_0x13312c(0x152);await _0x52c37f[_0x13312c(0x13f)][_0x13312c(0x13c)](_0x52c37f[_0x13312c(0x135)],_0x2f6ce3,MessageType[_0x13312c(0x15a)],{'quoted':_0x52c37f[_0x13312c(0x14c)]});});
+let Bixby = require('../events');
+let ziyan = require('../config');
+let v = c.SESSION
+let {Fancy} = require('raganork-bot');
+let {MessageType} = require('@adiwajshing/baileys');
+let Language = require('../language');
+let fm = c.WORKTYPE == 'public' ? false : true
+Bixby.addCommand({pattern: 'fancy ?(.*)', fromMe: fm, desc: 'Transforms normal text to cool fancy text. Reply to a text message'}, (async (m, q) => {
+if (!m.reply_message) return await m.sendMessage(`_Reply to a text message_ \n Example: .fancy 10 \n Number codes: \n 1. tēxt hērē
+3. ｲ乇ﾒｲ ん乇尺乇
+4. ㄒ乇乂ㄒ 卄乇尺乇
+5. 🅃🄴🅇🅃 🄷🄴🅁🄴
+6. ᏖᏋጀᏖ ᏂᏋᏒᏋ
+7. TE᙭T ᕼEᖇE
+8. ȶɛӼȶ ɦɛʀɛ
+9. 𝚃𝚎𝚡𝚝 𝙷𝚎𝚛𝚎        
+10. 𝙏𝙚𝙭𝙩 𝙃𝙚𝙧𝙚        
+11. 𝐓𝐞𝐱𝐭 𝐇𝐞𝐫𝐞        
+12. 𝗧𝗲𝘅𝘁 𝗛𝗲𝗿𝗲        
+13. 𝘛𝘦𝘹𝘵 𝘏𝘦𝘳𝘦        
+14. Tҽxƚ Hҽɾҽ
+15. ₮ɆӾ₮ ⱧɆⱤɆ
+16. †êx† Hêrê
+17. тєχт нєяє
+18. Ͳҽ×է Ƕҽɾҽ
+19. ƬΣXƬ ΉΣЯΣ
+20. ₜₑₓₜ ₕₑᵣₑ
+21. ᵀᵉˣᵗ ᴴᵉʳᵉ
+22. ՇєאՇ ђєгє
+23. 𝕋𝕖𝕩𝕥 ℍ𝕖𝕣𝕖       
+24. 𝕿𝖊𝖝𝖙 𝕳𝖊𝖗𝖊        
+25. 🆃🅴🆇🆃 🅷🅴🆁🅴
+26. 𝓣𝓮𝔁𝓽 𝓗𝓮𝓻𝓮        
+27. 𝔗𝔢𝔵𝔱 ℌ𝔢𝔯𝔢       
+28. Ｔｅｘｔ Ｈｅｒｅ
+29. ᴛᴇxᴛ ʜᴇʀᴇ`)
+    var r = Fancy(m.reply_message.text,v)
+    var msg;
+if (q[1] == '1') msg = r.res1
+if (q[1] == '2') msg = r.res2
+if (q[1] == '3') msg = r.res3
+if (q[1] == '4') msg = r.res4
+if (q[1] == '5') msg = r.res5
+if (q[1] == '6') msg = r.res6
+if (q[1] == '7') msg = r.res7
+if (q[1] == '8') msg = r.res8
+if (q[1] == '9') msg = r.res9
+if (q[1] == '10') msg = r.res10
+if (q[1] == '11') msg = r.res11
+if (q[1] == '12') msg = r.res12
+if (q[1] == '13') msg = r.res13
+if (q[1] == '14') msg = r.res14
+if (q[1] == '15') msg = r.res15
+if (q[1] == '16') msg = r.res16
+if (q[1] == '17') msg = r.res17
+if (q[1] == '18') msg = r.res18
+if (q[1] == '19') msg = r.res19
+if (q[1] == '20') msg = r.res20
+if (q[1] == '21') msg = r.res21
+if (q[1] == '22') msg = r.res22
+if (q[1] == '23') msg = r.res23
+if (q[1] == '24') msg = r.res24
+if (q[1] == '25') msg = r.res25
+if (q[1] == '26') msg = r.res26
+if (q[1] == '27') msg = r.res27
+if (q[1] == '28') msg = r.res28
+if (q[1] == '29') msg = r.res29
+if (parseInt(q[1]) > 30) msg = 'Wrong parameter. Use numbers from fancy table below 30'
+    await m.client.sendMessage(m.jid,msg,MessageType.text,{quoted: m.data})}));

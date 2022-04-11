@@ -1,10 +1,10 @@
 let Bixby = require('../events');
 let ziyan = require('../config');
-let v = c.SESSION
+let v = ziyan.SESSION
 let {Fancy} = require('raganork-bot');
 let {MessageType} = require('@adiwajshing/baileys');
 let Language = require('../language');
-let fm = c.WORKTYPE == 'public' ? false : true
+let fm = ziyan.WORKTYPE == 'public' ? false : true
 Bixby.addCommand({pattern: 'fancy ?(.*)', fromMe: fm, desc: 'Transforms normal text to cool fancy text. Reply to a text message'}, (async (m, q) => {
 if (!m.reply_message) return await m.sendMessage(`_Reply to a text message_ \n Example: .fancy 10 \n Number codes: \n 1. tēxt hērē
 3. ｲ乇ﾒｲ ん乇尺乇

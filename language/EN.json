@@ -178,7 +178,7 @@
         },
         "profile": {
             "KICKME_DESC": "It kicks you from the group you are using it in.",
-            "KICKME": "```Bye bye! I am going 🤠```",
+            "KICKME": "*ඒනම් කොල්ලො අපි ගියා* 🤠",
             "PP_DESC": "Makes the profile photo what photo you reply.",
             "NEED_PHOTO": "*Give me a photo!*",
             "PPING": "```Setting profile photo...```",
@@ -228,7 +228,7 @@
             "UPLOADING_SONG": "*ඔබගේ ගීතය ඔබ වෙත එවමින්*",
             "VIDEO_DESC": " YouTube මගින් විඩියෝ බාගැනීමට.",
             "NEED_VIDEO": "*කරුනාකර video link එකක් ලබාදෙන්න*\n*Example:* ```.video https://youtu.be/Lv4gYo6Ss2o```",
-            "DOWNLOADING_VIDEO": "*ඔබගෙ විඩියෝව බාගත කරමින්",
+            "DOWNLOADING_VIDEO": "*ඔබගෙ විඩියෝව බාගත කරමින්*",
             "UPLOADING_VIDEO": "*ඔබගේ විඩියෝව ඔබ වෙත එවමින්*",
             "LOADING": "*ඔබගේ විඩියෝව ලබාගනිමින්*",
             "YT_DESC": "YouTube මගින් Video Link ලබා දේ..",
@@ -264,15 +264,15 @@
             "REPLY": "*Please Respond to User's Message to Report!*"
         },
         "updater": {
-            "UPDATER_DESC": "Checks the update.",
-            "UPDATE": "*Bixby Mowl completely upto date *",
-            "NEW_UPDATE": "*New update available for Bot!*\n\n*To update Bot give this command: .update now*\n\n*Join This Group Before Updating*\n*https://chat.whatsapp.com/DCMXCkQFxkAKIZPKb5MXnI*\n\nChanges:\n```",
+            "UPDATER_DESC": "යාවත්කාලීන කිරීම් පරික්ශා කිරීම",
+            "UPDATE": "*Your bot completely upto date*",
+            "NEW_UPDATE": "*නව යාවත්කාලීන කිරීමක් ඔබ  Bot වෙත ලැබී ඇත.!*\n\n*To update Bot give this command: .update now*\n\n*Join This Group Before Updating*\n*https://chat.whatsapp.com/LqqFmG64j5KFUxSje40UNz*\n\nChanges:\n```",
             "UPDATE_NOW_DESC": "It makes updates.",
-            "UPDATING": "𝚄𝚙𝚍𝚊𝚝𝚒𝚗𝚐....💖\n\n𝙿𝚕𝚎𝚊𝚜𝚎 𝚆𝚊𝚒𝚝.....",
+            "UPDATING": "*Bot Updaing....* 🔃\n\n*Please Wait 5 Minutes.....*",
             "INVALID_HEROKU": "*❌ Your Heroku app name or api key wrong!*",
             "UPDATED": "*Updated ✅️*",
-            "UPDATED_LOCAL": "*✅ Updated!*",
-            "AFTER_UPDATE": "𝙷𝚎𝚕𝚕𝚘 𝙼𝚊𝚜𝚝𝚎𝚛🥰\n\n𝙸 𝙰𝚖 𝚄𝚙𝚍𝚊𝚝𝚎𝚍 ✅ 𝙿𝚕𝚎𝚊𝚜𝚎 𝚆𝚊𝚒𝚝 Bixby 𝚁𝚎𝚜𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝙰𝚞𝚝𝚘𝚖𝚊𝚝𝚒𝚌𝚕𝚢 ✅️",
+            "UPDATED_LOCAL": "✅  *File Attached!*",
+            "AFTER_UPDATE": "*Bot Updated* 🥰\n\n*Bot Restarting*  ✅ *Please wait One Minute for use bot*  ✅️",
             "IN_AF": "*Please check* ```HEROKU_APP_NAME``` *and* ```app name``` *They must be same.*\n*If these two values ​​are the same, please restore* ```HEROKU_API_KEY```\n\n_To access these settings, use Heroku >> App >> Settings >> Reavel Config Vars_\n_To renew your API key, follow these steps, Heroku >> Account >> API Key then replace old api key in config vars._"
         },
         "whois": {

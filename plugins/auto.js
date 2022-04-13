@@ -5,7 +5,7 @@ https://github.com/RIPPER-SER/bixbymowl
 */
 
 //BASIC REQUIREMENTS
-const Bixby = require('../events');
+/*const Bixby = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
@@ -48,4 +48,4 @@ var i = Math.floor(31*Math.random())
 
 await message.sendMessage(r_text[i]);
 
-}));
+}));*/

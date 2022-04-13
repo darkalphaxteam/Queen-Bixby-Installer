@@ -26,8 +26,8 @@ var afnplk = '```⏱ Time :' + plk_say + '```\n\n ```📅 Date :' + plk_here + '
       ]
       
       const buttonMessage = {
-          contentText: ' Welcome to Bixby.... 🏻 \n\n         ☆ *Bixby Bot Made by RIPPER-SER* ☆\n\n🎯 Name  : SL BIXBY 1.0   \n🎯 Status : Public\n🎯 Time   : ```' + plk_say + '```\n🎯 Date : ```' + plk_here + '```\n🎯 Prefix : [ . ]\n\n         ☆ *TGM Arcade* ☆\n\n🎯 ZIYAN,MIDLAJ.DARKALPHA\n\n          ☆ *ALPHA TEAM WHATSAPP BOTS* ☆\n\n🎗🎯 ᴄʟɪᴄᴋ ᴍᴇɴᴜ ᴀɴᴅ ᴇɴᴊᴏʏ ᴛʜᴇ ʙᴏᴛ\n',
-          footerText: ' SL Bixby™',
+          contentText: ' Welcome to Bixby.... 🏻 \n\n         ☆ *Bixby Bot Made by RIPPER-SER* ☆\n\n🎯 Name  : SL BIXBY 1.0   \n🎯 Status : Public\n🎯 Time   : ```' + plk_say + '```\n🎯 Date  : ```' + plk_here + '```\n🎯 Prefix : [ . ]\n\n           ☆ *TGM Arcade* ☆\n\n🎯 ZIYAN,MIDLAJ.DARKALPHA\n\n       ☆ *ALPHA TEAM WHATSAPP BOTS* ☆\n\n🎗🎯 ᴄʟɪᴄᴋ ᴍᴇɴᴜ ᴀɴᴅ ᴇɴᴊᴏʏ ᴛʜᴇ ʙᴏᴛ\n',
+          footerText: 'Bixby WhatsApp Bot™',
           buttons: buttons,
           headerType: 1
       }

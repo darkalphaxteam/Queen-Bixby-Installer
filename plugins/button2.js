@@ -26,11 +26,11 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
     const buttons = [
 
-        {buttonId: 'id1', buttonText: {displayText: 'I Am Fine 🥰  \n\n\nOk Boshh😌😂'}, type: 1},
+        {buttonId: 'id1', buttonText: {displayText: 'I Am Fine 🥰  \n\n\nLife is Ok😌😂'}, type: 1},
 
-        {buttonId: 'id2', buttonText: {displayText: 'Ooh Pettenn Onn Fear Aayi😐   \n\n\nFear Aavanda Ithokke Ente Oorooo Kalikal Allee🤭🌚'}, type: 1},
+        {buttonId: 'id2', buttonText: {displayText: 'Im Not fine Now 😐   \n\n\nLife is Impossible Dont think about past 🤭🌚'}, type: 1},
 
-        {buttonId: 'id3', buttonText: {displayText: 'Hii    \n\n\nAnthadaa🐦'}, type: 1}
+        {buttonId: 'id3', buttonText: {displayText: 'Hii Dear   \n\n\nHave a Nice Day ❄️🐦'}, type: 1}
 
       ]
 
@@ -38,9 +38,9 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
       const buttonMessage = {
 
-          contentText: "Hi Enthokke Und Bheei Chugam Thanne Allee? 😆",
+          contentText: "*Hii I'm Bixby How are you* 😆",
 
-          footerText: 'Owner ZIYAN',
+          footerText: 'Owner Thinuwa',
 
           buttons: buttons,
 

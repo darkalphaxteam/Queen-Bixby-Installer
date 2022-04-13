@@ -115,18 +115,7 @@ ${chalk.blue.italic('ℹ️ Connecting to Bixby Mowl servers...')}`);
         console.log(
             chalk.blueBright.italic('Confirming password...')
         );
-        if (config.AFPLK == 'BIXBY' || config.AFPLK == 'bixby' || config.AFPLK == 'Bixby' || config.AFPLK == 'pinky') {
-        //thanks to afnanplk
-        console.log(
-            chalk.green.bold('access granted thanks for using')
-        );
-         }
-         else if (config.AFPLK !== 'BIXBY' || config.AFPLK !== 'bixby' || config.AFPLK !== 'Bixby' || config.AFPLK !== 'pinky') {
-         console.log(
-            chalk.red.bold('make sure you have typed the correct password'));
-         throw new Error("access declinde password ⚠⚠ ");         
-         return; //created by afnanplk
-         }
+        
 
         console.log(
             chalk.blueBright.italic('⬇️ Installing external plugins...')

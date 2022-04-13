@@ -14,7 +14,7 @@ asena.addCommand({pattern: 'git', fromMe: true, deleteCommand: true, desc: GM,},
 
     var r_text = new Array ();
 
-    r_text[0] = "*https://github.com/RIPPER-SER/Bixby-Mowl*"; 
+    r_text[0] = "*https://github.com/thinura2003/Bixby-Mowl*"; 
  
     var i = Math.floor(1*Math.random())
 
@@ -33,7 +33,7 @@ asena.addCommand({pattern: 'git', fromMe: true, deleteCommand: true, desc: GM,},
 
             var r_text = new Array ();
 
-                 r_text[0] = "*https://github.com/RIPPER-SER/Bixby-Mowl*"; 
+                 r_text[0] = "*https://github.com/thinura2003/Bixby-Mowl*"; 
 
                      var i = Math.floor(1*Math.random())
 

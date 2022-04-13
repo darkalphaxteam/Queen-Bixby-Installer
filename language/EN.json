@@ -49,7 +49,7 @@
             "INVITE": "```Invitation link: ```"
         },
         "random_pic":{
-            "BTS_DESC": "Get BTS random images.",
+            "BTS_DESC": " BTS ගායක කන්ඩායමේ අහබු ලෙස Photos ලබා ගැනීම.",
             "EXO_DESC" : "Get EXO random images.",
             "BP_DESC": "Get Black Pink random images."
         },
@@ -68,7 +68,7 @@
             "L_WARN": "Please open your location before using command!"
         },
         "news": {
-            "NEWS_DESC": "It send News."
+            "NEWS_DESC": "News ලබා ගැනීම."
         },
         "afk": {
             "AFK_DESC": "It makes you AFK - Away From Keyboard.",
@@ -104,7 +104,7 @@
             "BP_DESC": "Get Black Pink random images."
         },
         "heroku": {
-            "RESTART_DESC": "Restart Bixby Mowl",
+            "RESTART_DESC": " Bixby නැවත පන ගැන්වීම",
             "RESTART_MSG": "*Bixby Mowl Restarting*",
             "SHUTDOWN_DESC": "Shutdown Bixby Mowl",
             "SHUTDOWN_MSG": "*Ok Bye I Am Sleeping Now* 💤\n\n*Shuting Down* ⚠️",

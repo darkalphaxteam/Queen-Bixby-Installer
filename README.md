@@ -38,7 +38,7 @@ Project created by <a href="https://github.com/RIPPER-SER">ZIYAN</a> to make it 
 ----
 
   #### TOTAL REPO VIEWS
-![Visitor Count](https://profile-counter.glitch.me/RIPPER-SER/count.svg)
+![Visitor Count](https://profile-counter.glitch.me/thinura2003/count.svg)
 </p>
 <h4 align="center">Support Video For Deploy Bot 👇:</h4>
 <p align="center">
@@ -48,7 +48,7 @@ Project created by <a href="https://github.com/RIPPER-SER">ZIYAN</a> to make it 
 
 <p align="center">
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=RIPPER-SER&show_icons=true&theme=dark&locale=en" alt="RIPPER-SER /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=thinura2003&show_icons=true&theme=dark&locale=en" alt="thinura2003 /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=RIPPER-SER&theme=dark" alt="RIPPER-SER" /></p>
 </p>

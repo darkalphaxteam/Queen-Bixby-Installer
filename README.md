@@ -68,9 +68,9 @@ Click WA logo to Join Support Group 👇
  
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/kNzso1?referralCode=RIPPERBOT)
   
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@ziyankp/Bixby-Mowl-QR)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@thinura2003/Bixby-Mowl-QR)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RIPPER-SER/Bixby-Mowl)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/thinura2003/Bixby-Mowl)
      </div>
   
 
@@ -93,7 +93,7 @@ GET QR
 $ apt update
 $ apt install nodejs --fix-missing
 $ pkg install git
-$ git clone https://github.com/RIPPER-SER/Bixby-Mowl
+$ git clone https://github.com/thinura2003/Bixby-Mowl
 $ cd Bixby-Mowl
 $ chmod +x *
 $ npm install @adiwajshing/baileys
@@ -103,7 +103,7 @@ $ node Julie.js
       
 ```js
 SETUP
-$ git clone https://github.com/RIPPER-SER/Bixby-Mowl
+$ git clone https://github.com/thinura2003/Bixby-Mowl
 $ cd Bixby-Mowl
 $ chmod +x *
 $ npm i

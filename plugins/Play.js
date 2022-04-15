@@ -20,7 +20,7 @@ const axios = require('axios')
 
 const Axios = require('axios')
 
-Bixby.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: 'search your song' , dontAddCommandList: true }, async (message, match) => {
+Bixby.addCommand({pattern: 'play ?(.*)', fromMe: false, desc: 'search your song' , dontAddCommandList: true }, async (message, match) => {
 
 		await message.client.sendMessage(message.jid, '*WORKING ON IT.....*' , MessageType.text, { quoted: message.data });
 

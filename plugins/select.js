@@ -48,7 +48,7 @@ Bixby.addCommand({pattern: 'tgm', fromMe: false, dontAddCommandList: true}, (asy
 
         buttonText: 'ᴍᴇɴᴜ',
 
-        description: "╔✘                SL BIXBY BOT⁩\n║✘              \n║✘╔════╗╔═╗╔══╗╔╗╔╗╔╗\n║✘║╔╗╔╗║║═╝║╔╗║║║║║║║\n║✘║║║║║║║═╗║║║╚╝║║╚╝║\n║✘╚╝╚╝╚╝╚═╝╚╝╚══╝╚══╝\n║✘           \n║✘      Hi Everyone 👋 \n║✘ \n║✘              *⌚" + plk_say + "*     \n║✘\n║✘▢ *ᴅᴇᴠᴇʟᴏʟᴇʀ* : *ᴛʜɪɴᴜʀᴀ*\n║✘▢ *ʙᴏᴛ * : " + Config.BOT + "  \n║✘▢ *ᴠᴇʀsɪᴏɴ* : 1.0\n║✘▢ *ᴛᴀʟᴋɪɴɢ_ʙɪxʙʏ* : " + Config.TALKING_MAALUTTY + " \n║✘▢ *ᴀᴜᴛᴏ ʙɪᴏ* : " + Config.AUTOBİO + "  \n║✘▢ *ᴍᴏᴅᴇ* : " + Config.WORKTYPE + "\n║✘▢ *ᴘʀᴇғɪx* : *. , !*\n║✘\n║✘\n╚✘ ═════ꪶ͢ᴀʙᴜ_sᴇʀ_ʙᴏᴛꫂ═════✘",
+        description: "╔✘                SL BIXBY BOT⁩\n║✘              \n║✘╔════╗╔═╗╔══╗╔╗╔╗╔╗\n║✘║╔╗╔╗║║═╝║╔╗║║║║║║║\n║✘║║║║║║║═╗║║║╚╝║║╚╝║\n║✘╚╝╚╝╚╝╚═╝╚╝╚══╝╚══╝\n║✘           \n║✘      Hi Everyone 👋 \n║✘ \n║✘              *⌚" + plk_say + "*     \n║✘\n║✘▢ *ᴅᴇᴠᴇʟᴏʟᴇʀ* : *ᴛʜɪɴᴜʀᴀ*\n║✘▢ *ʙᴏᴛ * : " + Config.BOT + "  \n║✘▢ *ᴠᴇʀsɪᴏɴ* : 1.0\n║✘▢ *ᴛᴀʟᴋɪɴɢ_ʙɪxʙʏ* : " + Config.TALKING_MAALUTTY + " \n║✘▢ *ᴀᴜᴛᴏ ʙɪᴏ* : " + Config.AUTOBİO + "  \n║✘▢ *ᴍᴏᴅᴇ* : " + Config.WORKTYPE + "\n║✘▢ *ᴘʀᴇғɪx* : *. , !*\n║✘\n║✘\nBixby WA Bot═════✘",
 
         sections: sections,
 

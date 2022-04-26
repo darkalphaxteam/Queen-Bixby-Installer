@@ -40,7 +40,7 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
           contentText: "*Hii I'm Bixby How are you* 😆",
 
-          footerText: 'Owner Thinuwa',
+          footerText: 'Queen Bixby Public Edition ',
 
           buttons: buttons,
 

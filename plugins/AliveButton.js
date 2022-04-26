@@ -21,8 +21,8 @@ Bixby.addCommand({pattern: 'alive', fromMe: ziyan, dontAddCommandList: true}, (a
       ]
       
       const buttonMessage = {
-          contentText: '```'+Config.BOT+'\n\n```'+Config.ALIVEMSG+'\n',
-          footerText: '©BIXBY',
+          contentText: 'Mr.'+Config.BOT+'\n\n'+Config.ALIVEMSG+'\n',
+          footerText: 'Queen Bixby Public Edition',
           buttons: buttons,
           headerType: 1
       }

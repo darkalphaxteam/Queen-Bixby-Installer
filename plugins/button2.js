@@ -26,11 +26,11 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
     const buttons = [
 
-        {buttonId: 'id1', buttonText: {displayText: 'I Am Fine 🥰  \n\n\nLife is Ok😌😂'}, type: 1},
+        {buttonId: 'id1', buttonText: {displayText: 'Github \n\n\nhttps://github.com/ALPHA-OFFICIAL-WA-TEAM/SL-BIXBY-BOT'}, type: 1},
 
-        {buttonId: 'id2', buttonText: {displayText: 'Im Not fine Now 😐   \n\n\nLife is Impossible Dont think about past 🤭🌚'}, type: 1},
+        {buttonId: 'id2', buttonText: {displayText: 'WhatsApp \n\n\nhttps://chat.whatsapp.com/LqqFmG64j5KFUxSje40UNz'}, type: 1},
 
-        {buttonId: 'id3', buttonText: {displayText: 'Hii Dear   \n\n\nHave a Nice Day ❄️🐦'}, type: 1}
+        {buttonId: 'id3', buttonText: {displayText: 'Youtube \n\n\nhttps://youtube.com/channel/UCvpyOCBCaBSCdv4QolnO0WQ'}, type: 1}
 
       ]
 
@@ -38,7 +38,7 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
       const buttonMessage = {
 
-          contentText: "*Hii I'm Bixby How are you* 😆",
+          contentText: "*Hii There  I'm Queen Bixby by King Dark Alpha (ALPHA TEAM) Queen Bixby is Modified Version of the WhatsBixby by Ziyan  Queen & Queen Thanks For using Queen Bixby Many Features Comming Soon* 😆",
 
           footerText: 'Queen Bixby Public Edition ',
 

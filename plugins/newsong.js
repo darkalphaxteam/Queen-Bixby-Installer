@@ -240,7 +240,7 @@ if (config.LANG == 'RU') {
 
 if (config.WORKTYPE == 'public') {
 
-Bixby.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: 'Downlad song'}, (async (message, match) => { 
+Bixby.addCommand({pattern: 'fsong ?(.*)', fromMe: false, desc: 'Downlad song'}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text);    
 
@@ -302,7 +302,7 @@ Bixby.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: 'Downlad song'}, (
 
 if (config.WORKTYPE == 'private') {
 
-Bixby.addCommand({pattern: 'song ?(.*)', fromMe: true, desc: 'Downlad songs'}, (async (message, match) => { 
+Bixby.addCommand({pattern: 'fsong ?(.*)', fromMe: true, desc: 'Downlad songs'}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text);    
 

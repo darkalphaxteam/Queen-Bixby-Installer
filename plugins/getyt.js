@@ -260,7 +260,7 @@ Bixby.addCommand({pattern: 'getyt ?(.*)', fromMe: false, desc: Lang.YT_DESC}, (a
 
         arama.all.map((video) => {
 
-            mesaj += '*' + video.title + '* - ' + video.url + '\n'
+            mesaj += '⚽ *' + video.title + '* ➢ ' + video.url + '\n'
 
         });
 

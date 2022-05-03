@@ -38,7 +38,7 @@ Bixby.addCommand({pattern: 'ehi', fromMe: whb, dontAddCommandList: true}, (async
 
       const buttonMessage = {
 
-          contentText: "    EHI COLLECTION BY BIXBY WA BOT \n\n ⚽ Any WhatsApp  - .waehi \n\n ⚽ Any Facebook - .faehi \n\n ⚽ Any Zoom - .zoehi \n\n ⚽ Any Youtube - .yuehi \n\n 💉 Injecter App - .injec\n  ",
+          contentText: "    EHI COLLECTION BY BIXBY WA BOT \n\n ⚽ Any WhatsApp  - .waehi \n\n ⚽ Any Facebook - .faehi \n\n ⚽ Any Zoom - .zoehi \n\n ⚽ Any Youtube - .yuehi \n\n ⚽ All EHI Files - .allehi \n\n 💉 Injecter App - .injec\n  ",
 
           footerText: 'Queen Bixby Public Edition',
 

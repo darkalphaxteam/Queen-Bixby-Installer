@@ -46,9 +46,9 @@ var afnplk = '⏱ Time :' + plk_say + '\n\n 📅 Date :' + plk_here + ''
 
       const buttonMessage = {
 
-          contentText: ' ╔════════ʙɪxʙʏ════════╗\n\n   ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ Qᴜᴇᴇɴ ʙɪxʙʏ ᴍᴇɴᴜ\n🛢️. OWNER   ➢️ ᴅᴀʀᴋ ᴀʟᴘʜᴀ\n🛢️️. VERSION ➢️ 1.5.2\n🛢️. WORKTYPE ➢️ ᴘᴜʙʟɪᴄ \n🛢️. BASE ➢ ᴡʜᴀᴛꜱʙɪxʙʏ \n🛢️. BOT FOR ➢ ᴏɴʟʏ ꜱɪɴʜᴀʟᴀ \n\n Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ\n',
+          contentText: ' ╔════════ʙɪxʙʏ════════╗\n\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ʙᴏᴛ ᴍᴇɴᴜ\n\n🛢️. OWNER   ➢️ ᴅᴀʀᴋ ᴀʟᴘʜᴀ\n🛢️️. VERSION ➢️ 1.5.2\n🛢️. WORKTYPE ➢️ ᴘᴜʙʟɪᴄ \n🛢️. BASE ➢ ᴡʜᴀᴛꜱʙɪxʙʏ \n🛢️. BOT FOR ➢ ᴏɴʟʏ ꜱɪɴʜᴀʟᴀ \n\n Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ\n',
 
-          footerText: 'Queen Bixby Public Edition ',
+          footerText: '╚════════ʙɪxʙʏ════════╝',
 
           buttons: buttons,
 

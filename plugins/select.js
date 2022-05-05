@@ -40,15 +40,15 @@ Bixby.addCommand({pattern: 'bixby', fromMe: false, dontAddCommandList: true}, (a
 
        
 
-       const sections = [{title: "SL Bixby Bot⁩", rows: rows}]
+       const sections = [{title: "Queen Bixby Public Edition ⁩", rows: rows}]
 
        
 
        const button = {
 
-        buttonText: 'ᴍᴇɴᴜ',
+        buttonText: 'ꜱᴇʟᴇᴄᴛ ⇈',
 
-        description: "╔✘                SL BIXBY BOT⁩\n║✘              \n║✘╔════╗╔═╗╔══╗╔╗╔╗╔╗\n║✘║╔╗╔╗║║═╝║╔╗║║║║║║║\n║✘║║║║║║║═╗║║║╚╝║║╚╝║\n║✘╚╝╚╝╚╝╚═╝╚╝╚══╝╚══╝\n║✘           \n║✘      Hi Everyone 👋 \n║✘ \n║✘              *⌚" + plk_say + "*     \n║✘\n║✘▢ *ᴅᴇᴠᴇʟᴏʟᴇʀ* : *ᴛʜɪɴᴜʀᴀ*\n║✘▢ *ʙᴏᴛ * : " + Config.BOT + "  \n║✘▢ *ᴠᴇʀsɪᴏɴ* : 1.0\n║✘▢ *ᴛᴀʟᴋɪɴɢ_ʙɪxʙʏ* : " + Config.TALKING_MAALUTTY + " \n║✘▢ *ᴀᴜᴛᴏ ʙɪᴏ* : " + Config.AUTOBİO + "  \n║✘▢ *ᴍᴏᴅᴇ* : " + Config.WORKTYPE + "\n║✘▢ *ᴘʀᴇғɪx* : *. , !*\n║✘\n║✘\nBixby WA Bot═════✘",
+        description: "╔════════ʙɪxʙʏ════════╗\n\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ʙᴏᴛ ᴍᴇɴᴜ\n\n🛢️. OWNER   ➢️ ᴅᴀʀᴋ ᴀʟᴘʜᴀ\n🛢️️. VERSION ➢️ 1.5.2\n🛢️. WORKTYPE ➢️ ᴘᴜʙʟɪᴄ \n🛢️. BASE ➢ ᴡʜᴀᴛꜱʙɪxʙʏ \n🛢️. BOT FOR ➢ ᴏɴʟʏ ꜱɪɴʜᴀʟᴀ \n\n Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ\n",
 
         sections: sections,
 

@@ -26,11 +26,11 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
     const buttons = [
 
-        {buttonId: 'id1', buttonText: {displayText: 'Github \n\n\nhttps://github.com/ALPHA-OFFICIAL-WA-TEAM/SL-BIXBY-BOT'}, type: 1},
+        {buttonId: 'id1', buttonText: {displayText: '🛢️ Github 🛢️ \n\n\nhttps://github.com/ALPHA-OFFICIAL-WA-TEAM/SL-BIXBY-BOT'}, type: 1},
 
-        {buttonId: 'id2', buttonText: {displayText: 'WhatsApp \n\n\nhttps://chat.whatsapp.com/LqqFmG64j5KFUxSje40UNz'}, type: 1},
+        {buttonId: 'id2', buttonText: {displayText: '🥏 WhatsApp 🥏\n\n\n https://chat.whatsapp.com/KqO4Yusx8jTG43sGouoXdO'}, type: 1},
 
-        {buttonId: 'id3', buttonText: {displayText: 'Youtube \n\n\nhttps://youtube.com/channel/UCvpyOCBCaBSCdv4QolnO0WQ'}, type: 1}
+        {buttonId: 'id3', buttonText: {displayText: '⚀ Youtube ⚀ \n\n\nhttps://youtube.com/channel/UCvpyOCBCaBSCdv4QolnO0WQ'}, type: 1}
 
       ]
 
@@ -38,7 +38,7 @@ Bixby.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async
 
       const buttonMessage = {
 
-          contentText: 'Hi i am.'+Config.BOT+'\n\n'+Config.ALIVEMSG+'\n',
+          contentText: '╔════════ʙɪxʙʏ════════╗\n\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ʙᴏᴛ ᴍᴇɴᴜ\n\n🛢️. OWNER   ➢️ ᴅᴀʀᴋ ᴀʟᴘʜᴀ\n🛢️️. VERSION ➢️ 1.5.2\n🛢️. WORKTYPE ➢️ ᴘᴜʙʟɪᴄ \n🛢️. BASE ➢ ᴡʜᴀᴛꜱʙɪxʙʏ \n🛢️. BOT FOR ➢ ᴏɴʟʏ ꜱɪɴʜᴀʟᴀ \n\n Hi i am.'+Config.BOT+'\n\n'+Config.ALIVEMSG+'\n',
 
           footerText: 'Queen Bixby Public Edition ',
 

@@ -20,7 +20,7 @@ var ddd = ggg.toString('utf-8')
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Bixby.addCommand({pattern: '1menu', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'menu', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
 
 // send a buttons message!
 

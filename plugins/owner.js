@@ -22,7 +22,7 @@ var ddd = ggg.toString('utf-8')
 
 let ziyan = Config.WORKTYPE == 'public' ? false : true
 
-Bixby.addCommand({pattern: '4owner', fromMe: ziyan, dontAddCommandList: true}, (async (message, match) => {
+Bixby.addCommand({pattern: 'owner', fromMe: ziyan, dontAddCommandList: true}, (async (message, match) => {
 
     
 

@@ -48,7 +48,7 @@ var afnplk = '⏱ Time :' + plk_say + '\n\n 📅 Date :' + plk_here + ''
 
           contentText: ' ╔════════ʙɪxʙʏ════════╗\n\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ʙᴏᴛ ᴍᴇɴᴜ\n\n🛢️. OWNER   ➢️ ᴅᴀʀᴋ ᴀʟᴘʜᴀ\n🛢️️. VERSION ➢️ 1.5.2\n🛢️. WORKTYPE ➢️ ᴘᴜʙʟɪᴄ \n🛢️. BASE ➢ ᴡʜᴀᴛꜱʙɪxʙʏ \n🛢️. BOT FOR ➢ ᴏɴʟʏ ꜱɪɴʜᴀʟᴀ \n\n Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ\n',
 
-          footerText: '2022 May Release Queen Bixby',
+          footerText: '❦ Qᴜᴇᴇɴ ʙɪxʙʏ ᴍᴀʏ ꜱᴛᴀʙʟᴇ ᴠᴇʀꜱɪᴏɴ ❦',
 
           buttons: buttons,
 

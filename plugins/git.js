@@ -10,7 +10,7 @@ const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-asena.addCommand({pattern: 'bot', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
+asena.addCommand({pattern: 'git', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -29,7 +29,7 @@ asena.addCommand({pattern: 'bot', fromMe: true, deleteCommand: true, desc: GM,},
 
     if (Config.WORKTYPE == 'public') {
 
-        asena.addCommand({pattern: 'bot', fromMe: false, deleteCommand: true, desc: GM,}, (async (message, match) => {
+        asena.addCommand({pattern: 'git', fromMe: false, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
             var r_text = new Array ();
 

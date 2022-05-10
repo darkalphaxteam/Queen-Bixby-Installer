@@ -11,7 +11,7 @@ const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-    Bixby.addCommand({pattern: 'ranime', fromMe: true, desc: 'random anime image'}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'ranime', fromMe: true, desc: 'අහබු anime රූප'}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -99,13 +99,13 @@ if (Config.WORKTYPE == 'private') {
 
     var respoimage = await axios.get(`${r_text[i]}`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made by Bixby Mowl'})
+    await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: ' *ᴍᴀᴅᴇ ʙʏ Qᴜᴇᴇɴ ʙɪxʙʏ*'})
 
     }));
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Bixby.addCommand({pattern: 'ranime', fromMe: false, desc:'random anime image '}, (async (message, match) => {
+    Bixby.addCommand({pattern: 'ranime', fromMe: false, desc:'අහබු anime රූප '}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -193,7 +193,7 @@ else if (Config.WORKTYPE == 'public') {
 
     var respoimage = await axios.get(`${r_text[i]}`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made by Bixby Mowl'})
+    await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: '*ᴍᴀᴅᴇ ʙʏ Qᴜᴇᴇɴ ʙɪxʙʏ*'})
 
     }));
 }

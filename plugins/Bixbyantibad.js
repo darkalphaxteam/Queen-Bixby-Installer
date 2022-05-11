@@ -46,7 +46,7 @@ notheri()
 var ldc = ''
 if (Config.LANG == 'AZ') ldc = '*Bağlantı Aşkarlandı!*'
 if (Config.LANG == 'TR') ldc = '*‎Link Tespit Edildi!*'
-if (Config.LANG == 'EN') ldc = '*Dont use badwords....* \n 😅 *Dont share other groups links here....* \n *No warning ⚠️ After kick i will say* 😅😅'
+if (Config.LANG == 'EN') ldc = '*නරක වචන භාවිත කරන්න එපා....* \n 😅 *Dont share other groups links here....* \n *No warning ⚠️ After kick i will say* 😅😅'
 if (Config.LANG == 'ML') ldc = '*ലിങ്ക് കണ്ടെത്തി!*'
 if (Config.LANG == 'ID') ldc = '*Tautan Terdeteksi!*'
 if (Config.LANG == 'PT') ldc = '*Link Detectado!*'
@@ -55,21 +55,21 @@ if (Config.LANG == 'HI') ldc = '*लिंक का पता चला!*'
 if (Config.LANG == 'ES') ldc = '*Enlace Detectado!*'
 Bixby.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
     if (therikick_var == 'true' && message.jid !== '905511384572-1616356915@g.us') {
-        let regex1 = new RegExp('thayoli')
-        let regex2 = new RegExp('Myre')
-        let regex3 = new RegExp('kundan')
-        let regex4 = new RegExp('poor')
+        let regex1 = new RegExp('huththi')
+        let regex2 = new RegExp('pakaya')
+        let regex3 = new RegExp('fuck')
+        let regex4 = new RegExp('hukanna')
         let regex5 = new RegExp('https://chat.whatsapp.com/')
-        let regex6 = new RegExp('andi')
-        let regex7 = new RegExp('myr')
+        let regex6 = new RegExp('hukanawa')
+        let regex7 = new RegExp('puka')
         let regex8 = new RegExp('Fuck')
-        let regex9 = new RegExp('oombi')
-        let regex10 = new RegExp('myran')
+        let regex9 = new RegExp('wesi')
+        let regex10 = new RegExp('paka')
         let regex11 = new RegExp('sex')
-        let regex12 = new RegExp('myre')
-        let regex13 = new RegExp('kundi')
-        let regex14 = new RegExp('fuck')
-        let regex15 = new RegExp('kundi')
+        let regex12 = new RegExp('හුත්ත')
+        let regex13 = new RegExp('පක')
+        let regex14 = new RegExp('පකයා')
+        let regex15 = new RegExp('හුකන්න')
         if (regex1.test(message.message)) {
             var us = await checkUsAdmin(message)
             var im = await checkImAdmin(message)

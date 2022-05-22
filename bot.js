@@ -342,9 +342,9 @@ ${chalk.blue.italic('ℹ️ Connecting to Bixby Mowl servers...')}`);
                                     'Gerçekleşen Hata: ' + error + '\n\n'
                                     , MessageType.text);
                             } else {
-                                await conn.sendMessage(conn.user.jid, '*~_________~ Bixby Mowl~______~*' +
-                                    '\n*🌀 Error found pls contact developers' +
-                                    '\n\n*⚠️ ' + error + '*\n'
+                                await conn.sendMessage(conn.user.jid, '*❦ Qᴜᴇᴇɴ ʙɪxʙʏ ᴇʀʀᴏʀ ꜰᴏᴜɴᴅ ❦*' +
+                                    '\n⚽ Error Found pls contact Dark alpha' +
+                                    '\n\n🤕 ' + error + '\n'
                                     , MessageType.text);
                             }
                         }

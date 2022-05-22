@@ -343,7 +343,7 @@ ${chalk.blue.italic('ℹ️ Connecting to Bixby Mowl servers...')}`);
                                     , MessageType.text);
                             } else {
                                 await conn.sendMessage(conn.user.jid, '*❦ Qᴜᴇᴇɴ ʙɪxʙʏ ᴇʀʀᴏʀ ꜰᴏᴜɴᴅ ❦*' +
-                                    '\n⚽ Error Found pls contact Dark alpha' +
+                                    '\n\n⚽ Error Found pls contact Dark alpha' +
                                     '\n\n🤕 ' + error + '\n'
                                     , MessageType.text);
                             }

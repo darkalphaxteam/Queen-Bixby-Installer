@@ -265,7 +265,7 @@
         },
         "updater": {
             "UPDATER_DESC": "යාවත්කාලීන කිරීම් පරික්ශා කිරීම",
-            "UPDATE": "*Your bot completely upto date*",
+            "UPDATE": "Your bot completely upto date\n\n ඔබගෙ බොට් සාර්ථකව ක්‍රියාකරයි මෙය පරික්ශා කිරිමේ බොට්වරයකු වන අතර හෙරොකු ගැටලුවක් නිසා බොහෝ විට ඉදිරියට යාවත්කාලීන කිරීම් ඔබට නොලැබේ \n\nhttps://chat.whatsapp.com/KqO4Yusx8jTG43sGouoXdO \n\n ❦ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ ❦   ",
             "NEW_UPDATE": "*නව යාවත්කාලීන කිරීමක් ඔබ  Bot වෙත ලැබී ඇත.!*\n\n*To update Bot give this command: .update now*\n\n*Join This Group Before Updating*\n*https://chat.whatsapp.com/LqqFmG64j5KFUxSje40UNz*\n\nChanges:\n```",
             "UPDATE_NOW_DESC": "It makes updates.",
             "UPDATING": "*Bot Updaing....* 🔃\n\n*Please Wait 5 Minutes.....*",

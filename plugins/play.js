@@ -238,7 +238,7 @@ if (config.LANG == 'RU') {
 
 }
 
-Bixby.addCommand({pattern: 'play ?(.*)', fromMe: false, desc: Lang.SONG_DESC}, (async (message, match) => { 
+Bixby.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: Lang.SONG_DESC}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,'NEED WORD 🍁',MessageType.text);
 
@@ -248,7 +248,7 @@ Bixby.addCommand({pattern: 'play ?(.*)', fromMe: false, desc: Lang.SONG_DESC}, (
 
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
 
-        var reply = await message.client.sendMessage(message.jid,`DOWNLOADED YOUR SONG`,MessageType.text);
+        var reply = await message.client.sendMessage(message.jid,`DOWNLOADING YOUR SONG`,MessageType.text);
 
         let title = arama[0].title.replace(' ', '+');
 

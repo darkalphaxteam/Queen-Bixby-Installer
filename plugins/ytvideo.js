@@ -240,7 +240,7 @@ if (config.LANG == 'RU') {
 
     
 
-    Bixby.addCommand({pattern: 'ytvideo ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
+    Bixby.addCommand({pattern: 'video ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
 
    
 

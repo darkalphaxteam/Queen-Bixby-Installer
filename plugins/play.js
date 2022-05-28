@@ -288,7 +288,7 @@ Bixby.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: Lang.SONG_DESC}, (
 
                 writer.addTag();
 
-                reply = await message.client.sendMessage(message.jid,fs.readFileSync('./' + title + '.jpg'), MessageType.image, { caption: '\n\n🏓 Song Name :\n'+ title + ' \n\nUPLOADING YOUR SONG \n\n '+`❦ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ ❦ `+'\n' });
+                reply = await message.client.sendMessage(message.jid,fs.readFileSync('./' + title + '.jpg'), MessageType.image, { caption: '\n\n🏓 Song Name :'+ title + ' \n🏓 Results Location : Youtube \n🏓 Results Bitrate : 320 \n\n🏓 Audio Type : M4A\n\n '+`❦ Qᴜᴇᴇɴ ʙɪxʙʏ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ ❦ `+'\n' });
 
                 await message.client.sendMessage(message.jid,Buffer.from(writer.arrayBuffer), MessageType.audio, {mimetype: Mimetype.mp4Audio,contextInfo: { forwardingScore: 2, isForwarded: true }, quoted: message.data, ptt: false});
 
